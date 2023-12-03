@@ -1,0 +1,60 @@
+@import "../App.scss";
+.techCard{
+   position: relative;
+   @include transition(.3s);                 
+ .details{
+   position: absolute; 
+   height: 100%;
+   width: 100%;
+   background: #0b2b43ce;
+   @include transition(.3s);
+   top: 0; 
+   opacity: 0;
+   .subjects{
+        @include transition(.3s);
+       font-weight: 400;
+       font-size: 20px;
+       color: white;             
+       position: absolute;
+       writing-mode: vertical-rl;
+       top: 0 ;
+
+       right: -100%; 
+       width: 80px;
+       align-items: center;
+       padding: 15px;
+       -webkit-writing-mode: vertical-rl;
+       -ms-writing-mode: vertical-rl;
+
+}  
+.teachname{
+    position: absolute; 
+    height: 80px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    padding-left: 25px;
+    width: 100%;
+
+    top: 100%;
+    @include transition(.3s);
+              
+}             
+ }                   
+}
+
+.techCard:hover{
+ .details{
+    opacity: 1;
+    .subjects{
+       right: 0;
+    }
+    .teachname{
+    top: calc(100% - 90px);
+    }
+    .teachname:hover{
+     color:  #64aadf;;               
+    }
+ }
+}

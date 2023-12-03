@@ -1,0 +1,64 @@
+body{
+  background: #e6e6e6;
+}
+
+.nav_manu a.active {
+  color: #3498db;
+  font-weight:bold;
+
+}
+
+* {
+  font-family: 'Jost', sans-serif;
+}
+
+.primarey_btn {
+  background: #FF444A;
+  color: white;
+}
+
+
+.primarey_btn:hover {
+  background: #FF444A !important;
+  color: white !important;
+}
+
+
+
+.lnear_text{
+background: var(--Linear, linear-gradient(90deg, #7E90FE 0%, #9873FF 100%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight:bold;
+}
+
+
+.lenear_outline{
+border-radius: 4px;
+border: 1px solid  #7E90FE;
+}
+
+.lenear_outline:hover{
+border-radius: 4px !important;
+border: 1px solid  #7E90FE !important;
+}
+
+.swiper-pagination {
+  padding-bottom: 50px;
+}
+
+/* Webkit Scrollbar */
+ .custom-scrollber::-webkit-scrollbar {
+  width: 8px;
+}
+
+ .custom-scrollber::-webkit-scrollbar-thumb {
+  background-color: #bdc3c7;
+  border-radius: 6px; /* roundness of the scrollbar thumb */
+}
+
+ .custom-scrollber::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* color of the scrollbar track */
+}
+

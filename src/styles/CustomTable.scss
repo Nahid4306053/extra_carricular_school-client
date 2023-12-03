@@ -1,0 +1,21 @@
+@import "../App.scss";
+
+.table_custom {
+  .table :where(.table-pin-rows thead tr) {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    height: 60px;
+    font-size: 16px;
+    background-color: rgb(205, 223, 240) ;
+  }   .table :where(.table-pin-rows tfoot tr) {
+    position: sticky;
+
+    top: 0px;
+    z-index: 10;
+    height: 60px;
+    font-size: 16px;
+    background-color: rgb(205, 223, 240) ;
+  }
+  
+}

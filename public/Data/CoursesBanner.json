@@ -1,0 +1,124 @@
+[
+                    
+                    {
+                    "programTitle": "Internship Program",
+                    "programDescription": "Our Internship Program offers a transformative 12-week experience designed to help you build a strong foundation for your career. This program is much more than just an internship; it's a stepping stone towards your future success. During this immersive journey, you'll have the opportunity to work on real-world projects, collaborate with industry experts, and gain hands-on experience that will set you apart in the competitive job market. Our program is tailored to computer science students who are in their junior or senior years and have a minimum GPA of 3.0. What sets us apart is our commitment to your growth. You'll receive mentorship from seasoned professionals who are passionate about nurturing the next generation of talent. This mentorship will not only help you excel during your internship but also prepare you for future employment opportunities. Networking is a vital aspect of career development, and our program provides ample opportunities for you to connect with professionals in your field. You'll expand your professional network and gain insights into the industry's latest trends and innovations. As you work on challenging projects and contribute to our organization's success, you'll also build a powerful resume that showcases your skills and accomplishments. Many of our interns have gone on to secure full-time positions with us or other top-tier companies. Don't miss out on this chance to unlock your potential, shape your future, and take the first step towards a successful career. Join us in the heart of New York City for an unforgettable internship experience. Apply now to embark on this life-changing journey. The application deadline is [application_deadline], and the program begins on [start_date] and ends on [end_date]. For inquiries or assistance, please contact us at internship@company.com. We look forward to welcoming you to our Internship Program!",
+                    "slogan": "Discover your potential and shape your future with our immersive 12-week Internship Program.",
+                    "programDuration": "12 weeks",
+                    "eligibility": {
+                                        "minimumGPA": 3.0,
+                                        "enrollmentStatus": "Full-time student",
+                                        "major": "Computer Science",
+                                        "yearOfStudy": "Junior or Senior"
+                    },
+                    "benefits": ["Hands-on experience in a professional setting.", "Mentorship from industry experts.", "Networking opportunities.", "Resume building.", "Potential for future employment."],
+                    "applicationDeadline": "2024-01-15",
+                    "startDate": "2024-02-01",
+                    "endDate": "2024-04-30",
+                    "location": "New York City, NY",
+                    "howToApply": "Submit your application online at [application_link].",
+                    "contactEmail": "internship@company.com",
+                    "bannerImageURL": "https://i.ibb.co/pdLh3zD/slider-1.png"
+}
+,
+{
+                    "programTitle": "Social Service Program",
+                    "programDescription": "Join our Social Service Program, a 12-week transformative journey dedicated to making a positive impact on communities. As a participant, you'll contribute to meaningful projects, collaborate with like-minded individuals, and create lasting change. Our program isn't just an internship; it's a catalyst for personal and professional growth. Open to those aged 18 and above, with a high school diploma or equivalent, this program requires full-time commitment.\n\nBenefits include hands-on experience in community projects, personal and professional growth, networking opportunities, and a certificate of completion. The application deadline is [application_deadline], and the program starts on [start_date] and ends on [end_date]. We welcome you to join us in various locations nationwide and empower communities together.\n\nApply now at [application_link] and be a catalyst for change! Contact us at socialservice@organization.org for inquiries.",
+                    "slogan": "Empower Communities, Transform Lives - Be a Catalyst for Change!",
+                    "programDuration": "12 weeks",
+                    "eligibility": {
+                      "minimumAge": 18,
+                      "education": "High school diploma or equivalent",
+                      "commitment": "Full-time commitment to the program"
+                    },
+                    "benefits": [
+                      "Hands-on experience in community projects.",
+                      "Personal and professional growth.",
+                      "Networking opportunities.",
+                      "Certificate of completion."
+                    ],
+                    "applicationDeadline": "2024-03-15",
+                    "startDate": "2024-04-01",
+                    "endDate": "2024-06-30",
+                    "location": "Various locations nationwide",
+                    "howToApply": "Submit your application online at [application_link].",
+                    "contactEmail": "socialservice@organization.org",
+                    "bannerImageURL": "https://i.ibb.co/ZGdwpWT/slider-2.png"
+                  }
+            ,
+            {
+                    "programTitle": "Medical Writing Program",
+                    "programDescription": "Our Medical Writing Program is a 16-week intensive journey for science and healthcare enthusiasts. Dive into the world of medical communication and writing excellence. Whether you aspire to work in pharmaceuticals, research, or healthcare, this program is your gateway to success.\n\nOur slogan, 'Bridge Science and Communication - Become a Medical Writing Expert!', encapsulates the essence of this program. Designed for those with a bachelor's degree in life sciences or a related field, strong writing and communication skills are essential. Full-time commitment is required.\n\nBenefits include in-depth medical writing training, access to medical experts and resources, portfolio development, and career advancement opportunities. Apply by [application_deadline], and the program begins on [start_date]. Join us online from anywhere in the world, and contact us at medwriting@medicalcompany.com for details.",
+                    "slogan": "Bridge Science and Communication - Become a Medical Writing Expert!",
+                    "programDuration": "16 weeks",
+                    "eligibility": {
+                      "education": "Bachelor's degree in life sciences or related field",
+                      "writingSkills": "Strong writing and communication skills",
+                      "commitment": "Full-time commitment to the program"
+                    },
+                    "benefits": [
+                      "In-depth medical writing training.",
+                      "Access to medical experts and resources.",
+                      "Portfolio development.",
+                      "Career advancement opportunities."
+                    ],
+                    "applicationDeadline": "2024-02-15",
+                    "startDate": "2024-03-01",
+                    "endDate": "2024-06-21",
+                    "location": "Online (Global)",
+                    "howToApply": "Submit your application online at [application_link].",
+                    "contactEmail": "medwriting@medicalcompany.com",
+                    "bannerImageURL": "https://i.ibb.co/4F5yv3N/slider-3.png"
+                  }
+
+                 ,{
+                    "programTitle": "Technical Writing Program",
+                    "programDescription": "Our 10-week Technical Writing Program simplifies complexity and teaches you to communicate with clarity. Perfect for individuals seeking mastery in technical writing for user-friendly documentation of complex technologies.\n\nOur slogan, 'Simplify Complexity, Communicate Clarity - Master Technical Writing!', reflects the essence of this program. To apply, you need a bachelor's degree or equivalent, strong writing, and analytical skills. Full-time commitment is essential.\n\nBenefits include technical writing skill development, hands-on experience with technical projects, industry-relevant certifications, and career placement assistance. Apply by [application_deadline], and the program runs from [start_date] to [end_date]. Join us virtually in our classroom, and for inquiries, contact us at techwriting@techinstitute.com.",
+                    "slogan": "Simplify Complexity, Communicate Clarity - Master Technical Writing!",
+                    "programDuration": "10 weeks",
+                    "eligibility": {
+                      "education": "Bachelor's degree or equivalent",
+                      "writingSkills": "Strong writing and analytical skills",
+                      "commitment": "Full-time commitment to the program"
+                    },
+                    "benefits": [
+                      "Technical writing skill development.",
+                      "Hands-on experience with technical projects.",
+                      "Industry-relevant certifications.",
+                      "Career placement assistance."
+                    ],
+                    "applicationDeadline": "2024-04-10",
+                    "startDate": "2024-04-30",
+                    "endDate": "2024-07-09",
+                    "location": "Virtual Classroom",
+                    "howToApply": "Submit your application online at [application_link].",
+                    "contactEmail": "techwriting@techinstitute.com",
+                    "bannerImageURL": "https://i.ibb.co/NSpztk6/slider-4.png"
+                  }
+                  ,{
+                    "programTitle": "Content Writing Program",
+                    "programDescription": "Unleash your creativity with our 8-week Content Writing Program. Craft compelling, engaging, and marketable content for various platforms. Whether you're an aspiring writer or looking to enhance your skills, this program is your opportunity to shine.\n\nOur slogan, 'Craft Words, Capture Hearts - Be a Content Writing Pro!', sums up the essence of this program. To apply, you need a high school diploma or equivalent, basic writing skills, and creativity. This part-time program (10-15 hours per week) is perfect for busy individuals.\n\nBenefits include content writing fundamentals, portfolio development, feedback from experienced writers, and freelancing and job opportunities. Apply by [application_deadline], and the program runs from [start_date] to [end_date]. Join us online from anywhere in the world, and for inquiries, contact us at contentwriting@writinghub.com.",
+                    "slogan": "Craft Words, Capture Hearts - Be a Content Writing Pro!",
+                    "programDuration": "8 weeks",
+                    "eligibility": {
+                      "education": "High school diploma or equivalent",
+                      "writingSkills": "Basic writing skills and creativity",
+                      "commitment": "Part-time commitment (10-15 hours per week)"
+                    },
+                    "benefits": [
+                      "Content writing fundamentals.",
+                      "Portfolio development.",
+                      "Feedback from experienced writers.",
+                      "Freelancing and job opportunities."
+                    ],
+                    "applicationDeadline": "2024-05-20",
+                    "startDate": "2024-06-01",
+                    "endDate": "2024-07-26",
+                    "location": "Online (Global)",
+                    "howToApply": "Submit your application online at [application_link].",
+                    "contactEmail": "contentwriting@writinghub.com",
+                    "bannerImageURL": "https://i.ibb.co/mH6c2FZ/slider-5.png"
+                  }
+                       
+
+]

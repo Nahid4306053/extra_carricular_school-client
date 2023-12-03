@@ -1,0 +1,285 @@
+[
+  {
+    "id": 1,
+    "CourseTitle": "Summer Marketing Internship",
+    "Category": "Internships",
+    "CourseDescription": "Our Summer Marketing Internship offers college students a unique opportunity to gain practical experience in the field of marketing. Learn from industry experts, work on real projects, and boost your resume.",
+    "Slogan": "Kickstart Your Marketing Career",
+    "ProgramDuration": "10 month",
+    "Eligibility": "College students",
+    "Benefits": [
+      "Hands-on experience",
+      "Networking opportunities",
+      "Internship certificate"
+    ],
+    "ApplicationDeadline": "2024-03-15",
+    "StartDate": "2024-06-01",
+    "EndDate": "2024-08-10",
+    "Thumbnail": "https://i.ibb.co/6BGt0LL/summer-internship.webp",
+    "Teachers": [
+      { "id": 1, "Name": "John Doe" },
+      { "id": 7, "Name": "David White" },
+      { "id": 10, "Name": "Holly Martinez" }
+    ],
+    "Price": "$0 (Unpaid)",
+    "Review": 4.5
+  },
+  {
+    "id": 2,
+    "CourseTitle": "Medical Writing Course",
+    "Category": "Content Writing",
+    "CourseDescription": "Our Medical Writing Course is designed for healthcare professionals and students who want to excel in medical communication. Learn to create precise and compliant medical documents.",
+    "Slogan": "Write Health for All",
+    "ProgramDuration": "8 month",
+    "Eligibility": "Healthcare professionals and students",
+    "Benefits": [
+      "Medical writing expertise",
+      "Career advancement",
+      "Certification"
+    ],
+    "ApplicationDeadline": "2024-02-01",
+    "StartDate": "2024-04-01",
+    "EndDate": "2024-05-30",
+    "Thumbnail": "https://i.ibb.co/X3J1f2T/Bussiness.jpg",
+    "Teachers": [
+      { "id": 11, "Name": "Ivan Lee" },
+      { "id": 2, "Name": "Jane Smith" }
+    ],
+    "Price": "$500",
+    "Review": 4.7
+  },
+  {
+    "id": 3,
+    "CourseTitle": "Technical Writing Workshop",
+    "Category": "Content Writing",
+    "CourseDescription": "Join our Technical Writing Workshop to master the art of creating clear and effective technical documents. Enhance your career in the tech industry.",
+    "Slogan": "Simplify Complexity",
+    "ProgramDuration": "6 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Technical writing skills",
+      "Career growth",
+      "Certificate of completion"
+    ],
+    "ApplicationDeadline": "2024-03-15",
+    "StartDate": "2024-05-01",
+    "EndDate": "2024-06-15",
+    "Thumbnail": "https://i.ibb.co/9c8ZQnm/Technicale-writing.jpg",
+    "Teachers": [
+      { "id": 1, "Name": "John Doe" },
+      { "id": 8, "Name": "Fiona Taylor" },
+      { "id": 12, "Name": "Julia Baker" }
+    ],
+    "Price": "$350",
+    "Review": 4.6
+  },
+  {
+    "id": 4,
+    "CourseTitle": "Digital Marketing Masterclass",
+    "Category": "Content Writing",
+    "CourseDescription": "Become a digital marketing expert with our comprehensive masterclass. Learn SEO, social media marketing, and online advertising strategies from industry leaders.",
+    "Slogan": "Dominate the Digital World",
+    "ProgramDuration": "12 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Digital marketing skills",
+      "Job opportunities",
+      "Google Ads certification"
+    ],
+    "ApplicationDeadline": "2024-04-01",
+    "StartDate": "2024-07-01",
+    "EndDate": "2024-09-20",
+    "Thumbnail": "https://i.ibb.co/88LDyFN/Digital-Marketing.png",
+    "Teachers": [
+      { "id": 2, "Name": "Jane Smith" },
+      { "id": 4, "Name": "Alice Brown" }
+    ],
+    "Price": "$700",
+    "Review": 4.8
+  },
+  {
+    "id": "5",
+    "CourseTitle": "Art course. Explore various",
+    "Category": "Art",
+    "CourseDescription": "Unleash your creativity through our Art course. Explore various mediums and styles to express yourself artistically. Our course is suitable for both beginners and experienced artists.",
+    "Slogan": "Create, Express, Inspire",
+    "ProgramDuration": "16 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Artistic skills",
+      "Self-expression",
+      "Exhibition opportunity"
+    ],
+    "ApplicationDeadline": "2024-04-15",
+    "StartDate": "2024-07-01",
+    "EndDate": "2024-10-20",
+    "Thumbnail": "https://i.ibb.co/TPTRzbx/art-class-benefits.jpg",
+    "Teachers": [
+      { "id": 9, "Name": "George Anderson" },
+      { "id": 3, "Name": "Bob Johnson" },
+      { "id": 12, "Name": "Julia Baker" }
+    ],
+    "Price": "$450",
+    "Review": 4.9
+  },
+  {
+    "id": "6",
+    "CourseTitle": "Music in our Music course",
+    "Category": "Music",
+    "CourseDescription": "Discover the joy of making music in our Music course. Learn music theory, composition, and instrument playing. Whether you're a beginner or an enthusiast, this course is for you.",
+    "Slogan": "Harmonize Your Life",
+    "ProgramDuration": "20 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Music skills",
+      "Musical creativity",
+      "Performance opportunities"
+    ],
+    "ApplicationDeadline": "2024-03-01",
+    "StartDate": "2024-06-15",
+    "EndDate": "2024-11-15",
+    "Thumbnail": "https://i.ibb.co/C9whRS2/online-music.jpg",
+    "Teachers": [
+      { "id": 6, "Name": "Ella Green" },
+      { "id": 3, "Name": "Bob Johnson" }
+    ],
+    "Price": "$550",
+    "Review": 4.7
+  },
+  {
+    "id": "7",
+    "CourseTitle": "Graphic Design",
+    "Category": "Art",
+    "CourseDescription": "Become a skilled graphic designer with our Graphic Design course. Learn design principles, software tools, and create stunning visuals. Open to beginners and design enthusiasts.",
+    "Slogan": "Design Your Imagination",
+    "ProgramDuration": "14 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Graphic design skills",
+      "Portfolio development",
+      "Certification"
+    ],
+    "ApplicationDeadline": "2024-06-01",
+    "StartDate": "2024-09-01",
+    "EndDate": "2024-12-15",
+    "Thumbnail": "https://i.ibb.co/B2tjncK/graphic-design.jpg",
+    "Teachers": [
+      { "id": 9, "Name": "George Anderson" },
+      { "id": 5, "Name": "Charlie Davis" },
+      { "id": 3, "Name": "Bob Johnson" }
+    ],
+    "Price": "$400",
+    "Review": 4.6
+  },
+  {
+    "id": "8",
+    "CourseTitle": "Coding Bootcamp is an intensive program",
+    "Category": "Technology",
+    "CourseDescription": "Our Coding Bootcamp is an intensive program for aspiring developers. Learn programming languages, web development, and build real projects to kickstart your tech career.",
+    "Slogan": "Code Your Future",
+    "ProgramDuration": "12 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Coding skills",
+      "Portfolio projects",
+      "Job placement assistance"
+    ],
+    "ApplicationDeadline": "2024-04-15",
+    "StartDate": "2024-07-01",
+    "EndDate": "2024-09-30",
+    "Thumbnail": "https://i.ibb.co/m49Ht1h/Coding-Bootcamp.jpg",
+    "Teachers": [{ "id": 12, "Name": "Julia Baker" }],
+    "Price": "$900",
+    "Review": 4.8
+  },
+  {
+    "id": "9",
+    "CourseTitle": "Finance Fundamentals",
+    "Category": "Finance",
+    "CourseDescription": "Get a solid foundation in finance with our Finance Fundamentals course. Learn financial principles, budgeting, and investment basics. Suitable for beginners and those looking to manage their finances better.",
+    "Slogan": "Master Your Money",
+    "ProgramDuration": "8 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Financial literacy",
+      "Budgeting skills",
+      "Investment knowledge"
+    ],
+    "ApplicationDeadline": "2024-05-01",
+    "StartDate": "2024-07-15",
+    "EndDate": "2024-09-10",
+    "Thumbnail": "https://i.ibb.co/wzk8GqY/Finance-Fundamentals.jpg",
+    "Teachers": [{ "id": 10, "Name": "Holly Martinez" }],
+    "Price": "$300",
+    "Review": 4.7
+  },
+  {
+    "id": "10",
+    "CourseTitle": "Photography",
+    "Category": "Art",
+    "CourseDescription": "Capture the world through your lens with our Photography course. Learn photography techniques, editing, and storytelling. Suitable for beginners and enthusiasts.",
+    "Slogan": "Frame Your Vision",
+    "ProgramDuration": "10 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Photography skills",
+      "Artistic expression",
+      "Portfolio building"
+    ],
+    "ApplicationDeadline": "2024-03-15",
+    "StartDate": "2024-05-01",
+    "EndDate": "2024-07-10",
+    "Thumbnail": "https://i.ibb.co/x2yGYTb/photography.jpg",
+    "Teachers": [
+      { "id": 9, "Name": "George Anderson" },
+      { "id": 5, "Name": "Charlie Davis" }
+    ],
+    "Price": "$350",
+    "Review": 4.6
+  },
+  {
+    "id": "11",
+    "CourseTitle": "Language Learning",
+    "Category": "Language",
+    "CourseDescription": "Explore the world of languages with our Language Learning course. Master a new language, improve language skills, and broaden your horizons. Suitable for language enthusiasts and beginners.",
+    "Slogan": "Unlock New Cultures",
+    "ProgramDuration": "16 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Language proficiency",
+      "Cultural understanding",
+      "Travel opportunities"
+    ],
+    "ApplicationDeadline": "2024-04-01",
+    "StartDate": "2024-07-15",
+    "EndDate": "2024-11-30",
+    "Thumbnail": "https://i.ibb.co/v1Sjfrs/langusge-learning.jpg",
+    "Teachers": [{ "id": 11, "Name": "Ivan Lee" }],
+    "Price": "$450",
+    "Review": 4.9
+  },
+  {
+    "id": "12",
+    "CourseTitle": "Entrepreneurship",
+    "Category": "Business",
+    "CourseDescription": "Unlock your entrepreneurial potential with our Entrepreneurship course. Learn business fundamentals, startup strategies, and innovation. Open to aspiring entrepreneurs and business enthusiasts.",
+    "Slogan": "Ignite Your Business Dreams",
+    "ProgramDuration": "14 month",
+    "Eligibility": "Open to all",
+    "Benefits": [
+      "Entrepreneurial skills",
+      "Business networking",
+      "Pitch your startup"
+    ],
+    "ApplicationDeadline": "2024-06-15",
+    "StartDate": "2024-09-01",
+    "EndDate": "2024-12-15",
+    "Thumbnail": "https://i.ibb.co/Jsbyzry/Bussiness-intremship.webp",
+    "Teachers": [
+      { "id": 7, "Name": "David White" },
+      { "id": 10, "Name": "Holly Martinez" }
+    ],
+    "Price": "$550",
+    "Review": 4.7
+  }
+]

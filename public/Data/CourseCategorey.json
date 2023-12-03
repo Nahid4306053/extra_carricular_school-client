@@ -1,0 +1,10 @@
+[
+  { "id": 1, "category": "Internships" },
+  { "id": 2, "category": "Content Writing" },
+  { "id": 3, "category": "Art" },
+  { "id": 4, "category": "Music" },
+  { "id": 5, "category": "Technology" },
+  { "id": 6, "category": "Finance" },
+  { "id": 7, "category": "Language" },
+  { "id": 8, "category": "Business" }
+]

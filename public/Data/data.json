@@ -1,0 +1,136 @@
+[
+  {
+    "id": "1",
+    "Picture": "https://i.ibb.co/89Q8MBv/Education-1.jpg",
+    "Title": "Empowering Education for a Brighter Future",
+    "Category": "Education",
+    "category_bg": "rgba(255, 68, 74, 0.20)",
+    "card_bg": "rgba(255, 68, 74, 0.15)",
+    "text_color": "#FF444A",
+    "Description": "Education is a powerful tool for empowerment, and your contribution can make a significant impact on the lives of individuals seeking knowledge and skills. Our mission is to provide quality education opportunities to underserved communities, breaking down barriers to learning and helping individuals reach their full potential.\n\nBy donating to our cause, you are ainvesting in a brighter future for all. Your support will fund scholarships, educational programs, and resources for students who face financial challenges, creating opportunities for a better tomorrow.\n\nJoin us in this journey of empowerment through education. Your donation of $750 can change lives and open doors to a world of possibilities.",
+    "Price": "$750"
+  },
+  {
+    "id": "2",
+    "Picture": "https://i.ibb.co/12QjBwk/Health-1.jpg",
+    "Title": "Supporting Healthcare Access for All",
+    "Category": "Health",
+    "category_bg": "rgba(0, 82, 255, 0.20)",
+    "card_bg": "rgba(0, 82, 255, 0.15)",
+    "text_color": "#0052FF",
+    "Description": "Your generous donation plays a crucial role in supporting healthcare initiatives that make a real difference in the lives of individuals and communities. Our mission is to ensure that everyone has access to quality healthcare services, regardless of their financial circumstances or geographic location. With your support, we can fund medical clinics, provide life-saving treatments, and improve healthcare infrastructure to benefit thousands of people.\n\nWe believe that good health is a fundamental human right, and your contribution helps us turn that belief into a reality. Together, we can save lives, reduce suffering, and promote a healthier world for all.\n\nPlease consider donating today to join us in this important mission.\n\nYour donation of $500 will help provide critical healthcare services to those in need.",
+    "Price": "$500"
+  },
+
+  {
+    "id": "3",
+    "Picture": "https://i.ibb.co/N30XhjT/Food-1.jpg",
+    "Title": "Feeding the Hungry: A Meal for Hope",
+    "Category": "Food",
+    "category_bg": "rgba(248, 113, 71, 0.20)",
+    "card_bg": "rgba(248, 113, 71, 0.15)",
+    "text_color": "#F87147",
+    "Description": "Hunger is a pressing issue in our community, and your donation can help us combat food insecurity. We believe that no one should go to bed hungry, and with your support, we can provide nutritious meals to those in need.\n\nOur food distribution programs target vulnerable populations, including children, seniors, and individuals experiencing financial hardship. Your contribution will help us purchase food, operate food banks, and organize community meal programs, ensuring that everyone has access to nourishing meals.\n\nTogether, we can make a meaningful difference in the lives of those facing hunger. Your donation of $200 will provide multiple meals to individuals and families in crisis.",
+    "Price": "$200"
+  },
+  {
+    "id": "4",
+    "Picture": "https://i.ibb.co/k4J63jH/Clothing-3.jpg",
+    "Title": "Clothing Drive: Share the Warmth",
+    "Category": "Clothing",
+    "category_bg": "rgba(121, 194, 63, 0.20)",
+    "card_bg": "rgba(121, 194, 63, 0.15)",
+    "text_color": "#79C23F",
+    "Description": "In the spirit of giving, we're organizing a clothing drive to provide warmth and comfort to those who need it most. Your donation of gently-used clothing items can make a world of difference in the lives of individuals and families facing challenging circumstances.\n\nWinter is approaching, and many people lack proper clothing to keep them warm. Your contribution will help distribute clothing to homeless shelters, low-income families, and individuals struggling to make ends meet.\n\nJoin us in this act of kindness and generosity. Your donation of $250 can provide essential clothing items and bring comfort and hope.",
+    "Price": "$250"
+  },
+  {
+    "id": "5",
+    "Picture": "https://i.ibb.co/2j5Xbd3/Health-2.jpg",
+    "Title": "Healthcare Support: Saving Lives Together",
+    "Category": "Health",
+    "category_bg": "rgba(0, 82, 255, 0.20)",
+    "card_bg": "rgba(0, 82, 255, 0.15)",
+    "text_color": "#0052FF",
+    "Description": "Your generous donation plays a crucial role in supporting healthcare initiatives that make a real difference in the lives of individuals and communities. Our mission is to ensure that everyone has access to quality healthcare services, regardless of their financial circumstances or geographic location. With your support, we can fund medical clinics, provide life-saving treatments, and improve healthcare infrastructure to benefit thousands of people.\n\nWe believe that good health is a fundamental human right, and your contribution helps us turn that belief into a reality. Together, we can save lives, reduce suffering, and promote a healthier world for all.\n\nPlease consider donating today to join us in this important mission.\n\nYour donation of $600 will help provide critical healthcare services to those in need.",
+    "Price": "$600"
+  },
+  {
+    "id": "6",
+    "Picture": "https://i.ibb.co/hfgLC6t/Education-3.jpg",
+    "Title": "Education Empowerment: Unlocking Potential",
+    "Category": "Education",
+    "category_bg": "rgba(255, 68, 74, 0.20)",
+    "card_bg": "rgba(255, 68, 74, 0.15)",
+    "text_color": "#FF444A",
+    "Description": "Education is a powerful tool for empowerment, and your contribution can make a significant impact on the lives of individuals seeking knowledge and skills. Our mission is to provide quality education opportunities to underserved communities, breaking down barriers to learning and helping individuals reach their full potential.\n\nBy donating to our cause, you are investing in a brighter future for all. Your support will fund scholarships, educational programs, and resources for students who face financial challenges, creating opportunities for a better tomorrow.\n\nJoin us in this journey of empowerment through education. Your donation of $800 can change lives and open doors to a world of possibilities.",
+    "Price": "$800"
+  },
+  {
+    "id": "7",
+    "Picture": "https://i.ibb.co/0jxqKhr/Clothing-1.jpg",
+    "Title": "Warmth and Comfort: Clothing Drive",
+    "Category": "Clothing",
+    "category_bg": "rgba(121, 194, 63, 0.20)",
+    "card_bg": "rgba(121, 194, 63, 0.15)",
+    "text_color": "#79C23F",
+    "Description": "In the spirit of giving, we're organizing a clothing drive to provide warmth and comfort to those who need it most. Your donation of gently-used clothing items can make a world of difference in the lives of individuals and families facing challenging circumstances.\n\nWinter is approaching, and many people lack proper clothing to keep them warm. Your contribution will help distribute clothing to homeless shelters, low-income families, and individuals struggling to make ends meet.\n\nJoin us in this act of kindness and generosity. Your donation of $350 can provide essential clothing items and bring comfort and hope.",
+    "Price": "$350"
+  },
+  {
+    "id": "8",
+    "Picture": "https://i.ibb.co/QPT3ZZV/Food-2.jpg",
+    "Title": "End Hunger: Nourishing Lives",
+    "Category": "Food",
+    "category_bg": "rgba(248, 113, 71, 0.20)",
+    "card_bg": "rgba(248, 113, 71, 0.15)",
+    "text_color": "#F87147",
+    "Description": "Hunger is a pressing issue in our community, and your donation can help us combat food insecurity. We believe that no one should go to bed hungry, and with your support, we can provide nutritious meals to those in need.\n\nOur food distribution programs target vulnerable populations, including children, seniors, and individuals experiencing financial hardship. Your contribution will help us purchase food, operate food banks, and organize community meal programs, ensuring that everyone has access to nourishing meals.\n\nTogether, we can make a meaningful difference in the lives of those facing hunger. Your donation of $300 will provide multiple meals to individuals and families in crisis.",
+    "Price": "$300"
+  },
+  {
+    "id": "9",
+    "Picture": "https://i.ibb.co/TPwkzpG/Education-2.jpg",
+    "Title": "Empowering Education: Shaping Futures",
+    "Category": "Education",
+    "category_bg": "rgba(255, 68, 74, 0.20)",
+    "card_bg": "rgba(255, 68, 74, 0.15)",
+    "text_color": "#FF444A",
+    "Description": "Education is a powerful tool for empowerment, and your contribution can make a significant impact on the lives of individuals seeking knowledge and skills. Our mission is to provide quality education opportunities to underserved communities, breaking down barriers to learning and helping individuals reach their full potential.\n\nBy donating to our cause, you are investing in a brighter future for all. Your support will fund scholarships, educational programs, and resources for students who face financial challenges, creating opportunities for a better tomorrow.\n\nJoin us in this journey of empowerment through education. Your donation of $950 can change lives and open doors to a world of possibilities.",
+    "Price": "$950"
+  },
+  {
+    "id": "10",
+    "Picture": "https://i.ibb.co/Ks0WmLK/Health-3.jpg",
+    "Title": "Healthcare Access: Making a Difference",
+    "Category": "Health",
+    "category_bg": "rgba(0, 82, 255, 0.20)",
+    "card_bg": "rgba(0, 82, 255, 0.15)",
+    "text_color": "#0052FF",
+    "Description": "Your generous donation plays a crucial role in supporting healthcare initiatives that make a real difference in the lives of individuals and communities. Our mission is to ensure that everyone has access to quality healthcare services, regardless of their financial circumstances or geographic location. With your support, we can fund medical clinics, provide life-saving treatments, and improve healthcare infrastructure to benefit thousands of people.\n\nWe believe that good health is a fundamental human right, and your contribution helps us turn that belief into a reality. Together, we can save lives, reduce suffering, and promote a healthier world for all.\n\nPlease consider donating today to join us in this important mission.\n\nYour donation of $700 will help provide critical healthcare services to those in need.",
+    "Price": "$700"
+  },
+
+  {
+    "id": "11",
+    "Picture": "https://i.ibb.co/qjnbFPC/Food-3.jpg",
+    "Title": "Eradicate Hunger: Sustaining Lives",
+    "Category": "Food",
+    "category_bg": "rgba(248, 113, 71, 0.20)",
+    "card_bg": "rgba(248, 113, 71, 0.15)",
+    "text_color": "#F87147",
+    "Description": "Hunger is a pressing issue in our community, and your donation can help us combat food insecurity. We believe that no one should go to bed hungry, and with your support, we can provide nutritious meals to those in need.\n\nOur food distribution programs target vulnerable populations, including children, seniors, and individuals experiencing financial hardship. Your contribution will help us purchase food, operate food banks, and organize community meal programs, ensuring that everyone has access to nourishing meals.\n\nTogether, we can make a meaningful difference in the lives of those facing hunger. Your donation of $1,000 will provide multiple meals to individuals and families in crisis.",
+    "Price": "$1000"
+  },
+  {
+    "id": "12",
+    "Picture": "https://i.ibb.co/mS1Rz5p/Clothing-2.jpg",
+    "Title": "Share the Warmth: Clothing Drive",
+    "Category": "Clothing",
+    "category_bg": "rgba(121, 194, 63, 0.20)",
+    "card_bg": "rgba(121, 194, 63, 0.15)",
+    "text_color": "#79C23F",
+    "Description": "In the spirit of giving, we're organizing a clothing drive to provide warmth and comfort to those who need it most. Your donation of gently-used clothing items can make a world of difference in the lives of individuals and families facing challenging circumstances.\n\nWinter is approaching, and many people lack proper clothing to keep them warm. Your contribution will help distribute clothing to homeless shelters, low-income families, and individuals struggling to make ends meet.\n\nJoin us in this act of kindness and generosity. Your donation of $450 can provide essential clothing items and bring comfort and hope.",
+    "Price": "$450"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 13,
+    "Name": "Muhammad Ali",
+    "Image": "https://i.ibb.co/vDSsBkx/student-m-7.jpg",
+    "Email": "muhammad.ali@example.com",
+    "Phone_Number": "123-456-7890",
+    "Address": "123 Main St, City, Country",
+    "Role": "student",
+    "Gender": "male"
+  },
+  {
+    "id": 14,
+    "Name": "Aisha Khan",
+    "Image": "https://i.ibb.co/txKp7gX/student-f-12.jpg",
+    "Email": "aisha.khan@example.com",
+    "Phone_Number": "987-654-3210",
+    "Address": "456 Elm St, City, Country",
+    "Role": "student",
+    "Gender": "female"
+  },
+  {
+    "id": 15,
+    "Name": "Ibrahim Ahmed",
+    "Image": "https://i.ibb.co/nCpYNQY/student-m-5.jpg",
+    "Email": "ibrahim.ahmed@example.com",
+    "Phone_Number": "234-567-8901",
+    "Address": "789 Oak St, City, Country",
+    "Role": "student",
+    "Gender": "male"
+  },
+  {
+    "id": 16,
+    "Name": "Fatima Ali",
+    "Image": "https://i.ibb.co/ngb0SS6/student-f-2.jpg",
+    "Email": "fatima.ali@example.com",
+    "Phone_Number": "345-678-9012",
+    "Address": "101 Pine St, City, Country",
+    "Role": "student",
+    "Gender": "female"
+  },
+  {
+    "id": 17,
+    "Name": "Ahmed Khan",
+    "Image": "https://i.ibb.co/bLHgrhq/student-m-3.jpg",
+    "Email": "ahmed.khan@example.com",
+    "Phone_Number": "432-109-8765",
+    "Address": "202 Cedar St, City, Country",
+    "Role": "student",
+    "Gender": "male"
+  },
+  {
+    "id": 18,
+    "Name": "Zainab Malik",
+    "Image": "https://i.ibb.co/9bzgSGJ/student-f-10.jpg",
+    "Email": "zainab.malik@example.com",
+    "Phone_Number": "543-210-9876",
+    "Address": "303 Maple St, City, Country",
+    "Role": "student",
+    "Gender": "female"
+  },
+  {
+    "id": 19,
+    "Name": "Omar Khan",
+    "Image": "https://i.ibb.co/n0DzjTW/student-f-8.jpg",
+    "Email": "omar.khan@example.com",
+    "Phone_Number": "654-321-0987",
+    "Address": "404 Birch St, City, Country",
+    "Role": "student",
+    "Gender": "male"
+  },
+  {
+    "id": 20,
+    "Name": "Sara Ahmed",
+    "Image": "https://i.ibb.co/JxwGzft/student-f-6.jpg",
+    "Email": "sara.ahmed@example.com",
+    "Phone_Number": "765-432-1098",
+    "Address": "505 Fir St, City, Country",
+    "Role": "student",
+    "Gender": "female"
+  },
+  {
+    "id": 21,
+    "Name": "Yusuf Ali",
+    "Image": "https://i.ibb.co/m5PxN3B/student-f-4.jpg",
+    "Email": "yusuf.ali@example.com",
+    "Phone_Number": "876-543-2109",
+    "Address": "606 Pine St, City, Country",
+    "Role": "student",
+    "Gender": "male"
+  },
+  {
+    "id": 22,
+    "Name": "Layla Khan",
+    "Image": "https://i.ibb.co/9VF0Q35/student-m-9.jpg",
+    "Email": "layla.khan@example.com",
+    "Phone_Number": "987-654-3210",
+    "Address": "707 Oak St, City, Country",
+    "Role": "student",
+    "Gender": "female"
+  },
+  {
+    "id": 23,
+    "Name": "Zayd Ahmed",
+    "Image": "https://i.ibb.co/1MJdHgT/student-m-1.jpg",
+    "Email": "zayd.ahmed@example.com",
+    "Phone_Number": "123-456-7890",
+    "Address": "808 Cedar St, City, Country",
+    "Role": "student",
+    "Gender": "male"
+  },
+  {
+    "id": 24,
+    "Name": "Amira Malik",
+    "Image": "https://i.ibb.co/2MPk6XN/student-m-11.jpg",
+    "Email": "amira.malik@example.com",
+    "Phone_Number": "234-567-8901",
+    "Address": "909 Birch St, City, Country",
+    "Role": "student",
+    "Gender": "female"
+  }
+]

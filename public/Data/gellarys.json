@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Cultural Festival Dance",
+    "image_url": "https://i.ibb.co/CP163tX/Cultural-Festival-Dance.jpg",
+    "description": "Students enthusiastically participate in a vibrant cultural festival dance performance."
+  },
+  {
+    "id": 2,
+    "title": "Science Seminar Showcase",
+    "image_url": "https://i.ibb.co/pXCq5CF/Science-Seminar-Showcase.jpg",
+    "description": "A captivating science seminar where students showcase their innovative projects and discoveries."
+  },
+  {
+    "id": 3,
+    "title": "Sports Day Competitions",
+    "image_url": "https://i.ibb.co/svp1Rzt/Sports-Day.jpg",
+    "description": "Exciting sports day with students competing in various athletic events, fostering teamwork and sportsmanship."
+  },
+  {
+    "id": 4,
+    "title": "Artistic Expression Exhibition",
+    "image_url": "https://i.ibb.co/GPF4ZhW/Art-and-Craft-Workshop.jpg",
+    "description": "An awe-inspiring exhibition of artistic expression by our talented students through paintings and sculptures."
+  },
+  {
+    "id": 5,
+    "title": "Lively Debate Competition",
+    "image_url": "https://i.ibb.co/3vcYSrT/Debate-Tournament.jpg",
+    "description": "Engaging in a lively debate competition, our students passionately discuss important topics and refine their oratory skills."
+  },
+  {
+    "id": 6,
+    "title": "Historical Site School Trip",
+    "image_url": "https://i.ibb.co/GdMSdLm/Historical-Site-School-Trip.jpg",
+    "description": "A memorable school trip to a historical site, enriching our students' knowledge of the past."
+  },
+  {
+    "id": 7,
+    "title": "Cultural Diversity Food Festival",
+    "image_url": "https://i.ibb.co/zQYwwRt/Cultural-Diversity-Food-Festival.jpg",
+    "description": "Celebrating cultural diversity with a mouthwatering food festival featuring a delightful array of international cuisines."
+  },
+  {
+    "id": 8,
+    "title": "Community Cleanup Initiative",
+    "image_url": "https://i.ibb.co/9HsR1fk/Community-Cleanup-Initiative.jpg",
+    "description": "Our students actively contribute to their community through a dedicated cleanup initiative, making a positive impact on the environment."
+  },
+  {
+    "id": 9,
+    "title": "Orchestra Musical Performance",
+    "image_url": "https://i.ibb.co/71VXvV8/Orchestra-Musical-Performance.jpg",
+    "description": "A mesmerizing musical performance by our school's talented orchestra, filling the air with beautiful melodies."
+  },
+  {
+    "id": 10,
+    "title": "Robotics Engineering Competition",
+    "image_url": "https://i.ibb.co/3ckpNFr/Robotics-Workshop.png",
+    "description": "In a thrilling robotics competition, our students showcase their engineering prowess, designing and programming innovative robots."
+  },
+  {
+    "id": 11,
+    "title": "Graduation Ceremony Celebration",
+    "image_url": "https://i.ibb.co/bsR88GL/Graduation-Ceremony-Celebration.jpg",
+    "description": "A heartwarming graduation ceremony celebrating the achievements and bright futures of our graduating seniors."
+  },
+  {
+    "id": 12,
+    "title": "Environmental Conservation Campaign",
+    "image_url": "https://i.ibb.co/7YZRVVf/Environmental-Conservation-Campaign.jpg",
+    "description": "Students passionately engage in a tree planting campaign, fostering a sense of environmental responsibility and conservation."
+  }
+]

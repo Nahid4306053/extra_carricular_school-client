@@ -1,0 +1,27 @@
+@import '../App.scss';
+
+.card{
+    .coursefigure{
+      img{
+        @include transition(.3s);               
+      }
+    }                 
+   @include transition(.3s);                  
+  .overlay{
+    opacity: 0; 
+    @include transition(.3s);                   
+  }
+}
+
+
+.card:hover{
+
+  .overlay{
+    opacity: 0.5;                
+  }
+  .coursefigure{
+      img{
+         @include transform-scale(1.4)      
+         }
+      }  
+}
