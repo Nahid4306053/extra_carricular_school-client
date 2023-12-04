@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/Authntication.jsx";
 import Input from "../components/InputBox.jsx";
 import "../styles/SignUp.scss";
+import UploadImg from '../Utils/UploadIMG.jsx';
 export default function Signup() {
   const { getCurrentuser } = useAuth();
   const [img, setimg] = useState();
@@ -14,7 +15,7 @@ export default function Signup() {
   };
 
   const navigate = useNavigate();
-  const handleuserAdd = (form) => {
+  const handleuserAdd = async (form) => {
     form.preventDefault();
     const username = form.target.username.value;
     const email = form.target.email.value;
@@ -44,8 +45,11 @@ export default function Signup() {
 
     if (err.length === 0) {
       const formdata = new FormData(form.target);
-      axios
-        .post(`${import.meta.env.VITE_API_URL}/user`, formdata, {
+      if(avatar.length === 1){
+        const url = await UploadImg(avatar[0]);
+        formdata.set("avatar",url.data.data.display_url)    
+       }
+      axios.post(`${import.meta.env.VITE_API_URL}/user`, formdata, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -68,11 +72,11 @@ export default function Signup() {
         })
         .catch((error) => {
           console.log(error);
-          // setErrorMsg([error?.message]);
+          setErrorMsg([error?.message]);
         });
     }
     if (err.length > 0) {
-      // setErrorMsg(err);
+      setErrorMsg(err);
     }
   };
 

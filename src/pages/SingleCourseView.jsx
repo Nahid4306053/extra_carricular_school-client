@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"; import { Link, useParams } from "react-router-dom";
 import Pagebanner from "../components/Pagebanner";
 import Card from "../components/Card"; 
@@ -59,7 +60,7 @@ export default function SingleCourseView() {
       }
       CheackEnrollAvilAvility()
      }
-   },[_id, coursedata])
+   },[ coursedata])
   
     const handelCourseWhichList = () =>{
       const oldata = getLocalStorageCourse()
@@ -68,7 +69,7 @@ export default function SingleCourseView() {
     }
 
 
-console.log(isenrolled);
+
 
   return ( < > { 
     coursedata &&

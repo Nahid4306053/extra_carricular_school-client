@@ -1,5 +1,7 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { Link } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import useloadCoursedata from "../../../Hooks/loadCoursedata";
 import "../../../styles/CustomTable.scss";
 import CourseTablerow from "../CourseTablerow";

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import Pagebanner from "../components/Pagebanner";
@@ -47,7 +48,7 @@ import { useAuth } from "../Context/Authntication";
      }
      CheackFollow()
     }
-  },[_id, instructor])
+  },[ instructor])
 
   const Unfollow = async () =>{
     try{

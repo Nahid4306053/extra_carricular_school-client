@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import  { useEffect, useState } from "react";
 import UserRow from "../UserRow";
+// eslint-disable-next-line no-unused-vars
 import useLoadTeachers from "../../../Hooks/LoadTeachersData";
 import DashborderSearchBox from "../DashborderSearchBox";
 import usefetchUserData from "../../../Hooks/fetchUserData";

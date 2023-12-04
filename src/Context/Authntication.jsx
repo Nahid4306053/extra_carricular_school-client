@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import  { createContext, useContext, useEffect, useState } from "react";
 const AuthProvidor = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   return useContext(AuthProvidor);
 };

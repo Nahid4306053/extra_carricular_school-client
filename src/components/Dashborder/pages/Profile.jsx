@@ -1,25 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../Context/Authntication";
 import Input from "../../InputBox";
+import UploadImg from '../../../Utils/UploadIMG'
 export default function Profile() {
   const usrnameInput = useRef();
   const [readmood, setReadmood] = useState(true);
   const [img, setimg] = useState();
   const [Submitbutton, setSubmitbutton] = useState(true);
-  const { user, getCurretuser } = useAuth();
+  const { user, getCurrentuser } = useAuth();
   const { username, email, phone_number, address, avatar } = user || {};
   const [handleform, sethandleform] = useState({});
   const [errmsg, setErrorMsg] = useState([]);
-  const handleinput = (e) => {
+  const handleinput = (e) => {   
     sethandleform({
       ...handleform,
-      [e.target.name]: e.target.defaultValue,
+      [e.target.name]: e.target.value,
     });
     if (
       JSON.stringify({ username, phone_number, address }) !==
       JSON.stringify(handleform)
     ) {
+   
       setSubmitbutton(false);
     } else {
       setSubmitbutton(true);
@@ -39,9 +42,9 @@ export default function Profile() {
         address: address,
       });
     }
-  }, [address, phone_number, readmood, user, username]);
+  }, [readmood]);
 
-  const handleuserUpdate = (form) => {
+  const handleuserUpdate = async (form) => {
     form.preventDefault();
     const newavatar = form.target.avatar.files[0];
     if (
@@ -51,15 +54,17 @@ export default function Profile() {
       newavatar
     ) {
       const formdata = new FormData(form.target);
-
-      axios
-        .put(`${import.meta.env.VITE_API_URL}/user`, formdata, {
+      if(newavatar){
+        const url = await UploadImg(newavatar);
+        formdata.set("avatar",url.data.data.display_url)    
+       }
+      axios.put(`${import.meta.env.VITE_API_URL}/user`, formdata, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
           withCredentials: true,
         })
-        .then(function (response) {
+        .then(async function  (response) {
           if (
             response.data.error &&
             Object.keys(response.data.error).length > 0
@@ -71,8 +76,8 @@ export default function Profile() {
             }
           } else {
             if (response.data) {
-              console.log(response.data);
-              getCurretuser();
+            
+              getCurrentuser();
               setReadmood(true);
               setErrorMsg([]);
             }
@@ -138,7 +143,7 @@ export default function Profile() {
             <input
               ref={usrnameInput}
               onChange={handleinput}
-              defaultValue={handleform.username}
+              value={handleform.username}
               readOnly={readmood ? true : false}
               name="username"
               type="text"
@@ -148,14 +153,14 @@ export default function Profile() {
           </div>
           <Input
             readOnly={true}
-            defaultValue={email}
+            value={email}
             placeholder="Email"
             label="Email (Not Editable)"
           />
           <Input
             onChange={handleinput}
             readOnly={readmood ? true : false}
-            defaultValue={handleform.phone_number}
+            value={handleform.phone_number}
             placeholder="Phone Number"
             label="Phone Number"
             name="phone_number"
@@ -163,7 +168,7 @@ export default function Profile() {
           <Input
             onChange={handleinput}
             readOnly={readmood ? true : false}
-            defaultValue={handleform.address}
+            value={handleform.address}
             placeholder="Address"
             label="Address"
             name="address"

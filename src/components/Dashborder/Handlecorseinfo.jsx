@@ -1,16 +1,20 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import usefetchUserData from "../../Hooks/fetchUserData";
 import Input from "../../components/InputBox";
 import { map } from "lodash";
 import { useModal } from "../../Context/ModalContext";
-
+import { useNavigate } from "react-router-dom";
+import UploadImg from '../../Utils/UploadIMG'
 export default function Handlecorseinfo({ data, render }) {
   const {_id,applicationdeadline,benifits,
     category,courseduration,coursefee,coursetitle,description,eligibility,instructors,slogan,startdate,thumbnail
 } = data.data || {}
-  const {closeModel,setupdate} = useModal()
+  const {closeModel,Updatedata,setupdate} = useModal()
+  const navigate = useNavigate()
   const [img, setimg] = useState();
   const [Category, setCategory] = useState();
   const { users, fetchUsers } = usefetchUserData();
@@ -60,7 +64,7 @@ export default function Handlecorseinfo({ data, render }) {
     };
     fetchUsers("instructor");
     loadcatgorey();
-  }, [fetchUsers]);
+  }, []);
 
   useEffect(() => {
     getform.current.reset();
@@ -69,14 +73,13 @@ export default function Handlecorseinfo({ data, render }) {
         setinputvalue({ category : category  , courseduration : courseduration  , coursefee : coursefee  , coursetitle : coursetitle , description : description  , eligibility : eligibility  , slogan : slogan  , startdate :  startdate.split("T")[0]  , applicationdeadline:  applicationdeadline.split("T")[0] , })
       setSelectedInstructors(map(instructors,"_id")); setBenifit(benifits) , setBenifitInput(benifits.join("\n")) , setimg();
     }
-    
     else{
       setimg(); setBenifit([]); setSelectedInstructors([]);  setBenifitInput('');
       setinputvalue(  { category :   '' , courseduration : '' , coursefee : '' , coursetitle : '' , description :  '' , eligibility :  '' , slogan : '' , startdate : '' , applicationdeadline: ''})
     }
 
-  }, [render, data, category, courseduration, coursefee, coursetitle, description, eligibility, slogan, startdate, applicationdeadline, instructors, benifits]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [render,data]);
 
   const submitCourseInfo = async (form) => {
     form.preventDefault();
@@ -97,7 +100,7 @@ export default function Handlecorseinfo({ data, render }) {
       error.push("Please select atleast one Instructor");
     }
     if (startdate === "") {
-      error.push("Please set a start date");
+      error.push("Please set a start date"); 
     }
     if (applicationdeadline === "") {
       error.push("Please set a application deadline");
@@ -123,7 +126,12 @@ export default function Handlecorseinfo({ data, render }) {
       const formdata = new FormData(form.target);
       formdata.append("instructors", JSON.stringify(selectedInstructors));
       formdata.append("benifits", JSON.stringify(Benifit));
-
+      setErrorMsg([]);
+ 
+      if(thumbnail.length === 1){
+       const url = await UploadImg(thumbnail[0]);
+       formdata.set("thumbnail",url.data.data.display_url)    
+      }
       try {
         const sanpshort = data.mood === "add" 
         ? await axios.post(
@@ -375,8 +383,7 @@ export default function Handlecorseinfo({ data, render }) {
            </div>
            <div className="form-control mt-6">
              <input  type="submit" value= {data.mood === "add" ? " Publish Now" : "Update Now"} className="btn btn-primary"/>
-             
-             
+
            </div>
          </form>
        </div>
