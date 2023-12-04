@@ -1,17 +1,16 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import usefetchUserData from "../../Hooks/fetchUserData";
 import Input from "../../components/InputBox";
 import { map } from "lodash";
 import { useModal } from "../../Context/ModalContext";
-import { useNavigate } from "react-router-dom";
 
 export default function Handlecorseinfo({ data, render }) {
   const {_id,applicationdeadline,benifits,
     category,courseduration,coursefee,coursetitle,description,eligibility,instructors,slogan,startdate,thumbnail
 } = data.data || {}
-  const {closeModel,Updatedata,setupdate} = useModal()
-  const navigate = useNavigate()
+  const {closeModel,setupdate} = useModal()
   const [img, setimg] = useState();
   const [Category, setCategory] = useState();
   const { users, fetchUsers } = usefetchUserData();
@@ -61,7 +60,7 @@ export default function Handlecorseinfo({ data, render }) {
     };
     fetchUsers("instructor");
     loadcatgorey();
-  }, []);
+  }, [fetchUsers]);
 
   useEffect(() => {
     getform.current.reset();
@@ -70,12 +69,14 @@ export default function Handlecorseinfo({ data, render }) {
         setinputvalue({ category : category  , courseduration : courseduration  , coursefee : coursefee  , coursetitle : coursetitle , description : description  , eligibility : eligibility  , slogan : slogan  , startdate :  startdate.split("T")[0]  , applicationdeadline:  applicationdeadline.split("T")[0] , })
       setSelectedInstructors(map(instructors,"_id")); setBenifit(benifits) , setBenifitInput(benifits.join("\n")) , setimg();
     }
+    
     else{
       setimg(); setBenifit([]); setSelectedInstructors([]);  setBenifitInput('');
       setinputvalue(  { category :   '' , courseduration : '' , coursefee : '' , coursetitle : '' , description :  '' , eligibility :  '' , slogan : '' , startdate : '' , applicationdeadline: ''})
     }
 
-  }, [render,data]);
+  }, [render, data, category, courseduration, coursefee, coursetitle, description, eligibility, slogan, startdate, applicationdeadline, instructors, benifits]);
+
 
   const submitCourseInfo = async (form) => {
     form.preventDefault();
@@ -171,7 +172,7 @@ export default function Handlecorseinfo({ data, render }) {
      <div className="h-96 flex justify-center overflow-hidden ">
        <img
          className=" h-full"
-         src={img ? img : thumbnail ? `${import.meta.env.VITE_IMG_URL}/courseThumnail/${thumbnail}` : "https://i.ibb.co/6BGt0LL/summer-internship.webp"}
+         src={img ? img : thumbnail ? thumbnail : "https://i.ibb.co/6BGt0LL/summer-internship.webp"}
          alt=""
        />
      </div>
@@ -308,8 +309,6 @@ export default function Handlecorseinfo({ data, render }) {
                          <img
                            className="h-14"
                            src={
-                             import.meta.env.VITE_IMG_URL +
-                             "/avatars/" +
                              ele.avatar
                            }
                            alt=""

@@ -3,20 +3,10 @@
 import { Link } from "react-router-dom";
 import "../styles/techCard.scss";
 export default function TeacherCard({ instructor }) {
-  const { avatar, email, phone_number, username, _id } =
-    instructor || {};
+  const { avatar, email, phone_number, username, _id } = instructor || {};
   return (
     <div className="rounded-lg overflow-hidden techCard cursor-pointer">
-      <img
-        className="w-full h-full max-h-[550px]"
-        src={
-          import.meta.env.VITE_IMG_URL +
-          "/avatars/" +
-          avatar +
-          import.meta.env.VITE_IMG_TOKEN
-        }
-        alt=""
-      />
+      <img className="w-full h-full max-h-[550px]" src={avatar} alt="" />
       <div className="details">
         <div className="name"></div>
 
@@ -28,7 +18,6 @@ export default function TeacherCard({ instructor }) {
                 <i className="hover:text-[#0A283F] transition-all fa-solid fa-tty"></i>
               </a>
               <a className="" href={"mailto:" + email}>
-                {" "}
                 <i className="hover:text-[#0A283F] transition-all fa-solid fa-envelope"></i>
               </a>
             </div>

@@ -1,112 +1,110 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { uniqBy } from "lodash";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useModal } from "../../../Context/ModalContext";
-import useloadCoursedata from "../../../Hooks/loadCoursedata";
+import usefetchcourseData from "../../../Hooks/FetchCourseData";
 import "../../../styles/CustomTable.scss";
 import CourseTablerow from "../CourseTablerow";
-import usefetchcourseData from '../../../Hooks/FetchCourseData'
-import { uniqBy, update } from "lodash";
-import axios from "axios";
 export default function CourseTable() {
   const navigate = useNavigate();
-  const {Courses,fetchcourses} = usefetchcourseData()
-  const {closeModel,Updatedata,setupdate ,openModal} = useModal()
-  const [page,setpage] = useState(1);
-  const [loading,setloading] = useState(false);
-  const [displayCourses,setDisplayCourses] = useState([])
+  const { Courses, fetchcourses } = usefetchcourseData();
+  const { closeModel, Updatedata, setupdate, openModal } = useModal();
+  const [page, setpage] = useState(1);
+  const [loading, setloading] = useState(false);
+  const [displayCourses, setDisplayCourses] = useState([]);
 
-  const handelData = async (e) =>{
-    if(e.target.scrollTop  === (e.target.scrollHeight - e.target.offsetHeight )){
-     if(Courses.totalData !== displayCourses.length){
-      setpage(page+1)
-      setloading(true)
-      await  fetchcourses(page,5);
-      setDisplayCourses(uniqBy([...displayCourses,...Courses.data],'_id'))
-      setloading(false)
-     }
+  const handelData = async (e) => {
+    if (e.target.scrollTop === e.target.scrollHeight - e.target.offsetHeight) {
+      if (Courses.totalData !== displayCourses.length) {
+        setpage(page + 1);
+        setloading(true);
+        await fetchcourses(page, 5);
+        setDisplayCourses(uniqBy([...displayCourses, ...Courses.data], "_id"));
+        setloading(false);
+      }
     }
-  }
-
+  };
 
   useEffect(() => {
-    if(Courses){
-       setDisplayCourses(uniqBy([...displayCourses , ...Courses.data],'_id'))
+    if (Courses) {
+      setDisplayCourses(uniqBy([...displayCourses, ...Courses.data], "_id"));
     }
-  },[Courses])
+  }, [Courses]);
 
-  useEffect(()=>{
-    fetchcourses(1,5)
-    if(Courses){
-      setDisplayCourses(uniqBy([...displayCourses,...Courses.data],'_id'))
-   }
-  },[])
-  useEffect(()=>{
-     if(Updatedata){
-      const updateIndex = displayCourses.findIndex((ele)=> ele._id === Updatedata._id)
-      const newdata = [...displayCourses];
-      if(updateIndex > -1){
-        newdata.splice(updateIndex,1,Updatedata)
-         setDisplayCourses(newdata)
-         console.log(displayCourses);
-      }
-      else{
-        const newdata = [...displayCourses];
-        newdata.push(Updatedata); 
-        setDisplayCourses(newdata)
-      }
-
-     }
-  },[Updatedata])
- const handelCorsestatus = (event,id,oldvalue) =>{
-    event.preventDefault(); 
-    const newvalue = event.target.value;   
-    const button = document.getElementById(id) 
-    if(oldvalue === newvalue){
-      button.setAttribute("disabled",'')
+  useEffect(() => {
+    fetchcourses(1, 5);
+    if (Courses) {
+      setDisplayCourses(uniqBy([...displayCourses, ...Courses.data], "_id"));
     }
-    else{
-      button.removeAttribute("disabled")
-    }
- }
- const handelUpdateSatus =async (form,id,oldvalue)=>{
-  form.preventDefault(); 
-  const newdata = form.target.status.value;
-  if(oldvalue === newdata){
-    alert("No changes found")
-  }
-  else{
-  try{
-    const snapshort =  await axios.put(`${import.meta.env.VITE_API_URL}/course/status/${id}`,{status:newdata},{
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-     })
-     if(snapshort.status === 200){
-      const newdaat =  snapshort.data.data;
-      const updateIndex = displayCourses.findIndex((ele)=> ele._id === id)
+  }, []);
+  useEffect(() => {
+    if (Updatedata) {
+      const updateIndex = displayCourses.findIndex(
+        (ele) => ele._id === Updatedata._id
+      );
       const newdata = [...displayCourses];
-      if(updateIndex > -1){
-        newdata.splice(updateIndex,1,newdaat)
-         setDisplayCourses(newdata)   
-      }
-      else{
+      if (updateIndex > -1) {
+        newdata.splice(updateIndex, 1, Updatedata);
+        setDisplayCourses(newdata);
+        console.log(displayCourses);
+      } else {
         const newdata = [...displayCourses];
-        newdata.unshift(newdaat); 
-        setDisplayCourses(newdata)
-      } 
-     }
-     else{
-       alert(snapshort.data.msg)
-     }
-  }catch(err){
-    alert("Something went wrong")
-  }
-  }
- }
+        newdata.push(Updatedata);
+        setDisplayCourses(newdata);
+      }
+    }
+  }, [Updatedata]);
+  const handelCorsestatus = (event, id, oldvalue) => {
+    event.preventDefault();
+    const newvalue = event.target.value;
+    const button = document.getElementById(id);
+    if (oldvalue === newvalue) {
+      button.setAttribute("disabled", "");
+    } else {
+      button.removeAttribute("disabled");
+    }
+  };
+  const handelUpdateSatus = async (form, id, oldvalue) => {
+    form.preventDefault();
+    const newdata = form.target.status.value;
+    if (oldvalue === newdata) {
+      alert("No changes found");
+    } else {
+      try {
+        const snapshort = await axios.put(
+          `${import.meta.env.VITE_API_URL}/course/status/${id}`,
+          { status: newdata },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        );
+        if (snapshort.status === 200) {
+          const newdaat = snapshort.data.data;
+          const updateIndex = displayCourses.findIndex((ele) => ele._id === id);
+          const newdata = [...displayCourses];
+          if (updateIndex > -1) {
+            newdata.splice(updateIndex, 1, newdaat);
+            setDisplayCourses(newdata);
+          } else {
+            const newdata = [...displayCourses];
+            newdata.unshift(newdaat);
+            setDisplayCourses(newdata);
+          }
+        } else {
+          alert(snapshort.data.msg);
+        }
+      } catch (err) {
+        alert("Something went wrong");
+      }
+    }
+  };
   return (
-   <>
-   <div className="header sticky flex   bg-slate-200 left-0  top-0  p-5 w-full">
+    <>
+      <div className="header sticky flex   bg-slate-200 left-0  top-0  p-5 w-full">
         <div className="form-control w-full">
           <div className="input-group">
             <input
@@ -134,7 +132,10 @@ export default function CourseTable() {
         </div>
       </div>
 
-   <div onScroll={handelData} className="overflow-x-auto h-[64vh] table_custom custom-scrollber ">
+      <div
+        onScroll={handelData}
+        className="overflow-x-auto h-[64vh] table_custom custom-scrollber "
+      >
         <table className="table-pin-rows table ">
           {/* head */}
           <thead className="">
@@ -149,7 +150,6 @@ export default function CourseTable() {
           <tbody className="text-lg">
             {displayCourses.length > 0 &&
               displayCourses.map((ele) => {
-
                 return (
                   // view details
                   <CourseTablerow key={ele._id} course={ele}>
@@ -162,7 +162,6 @@ export default function CourseTable() {
                       </div>
                     </Link>
 
-
                     {/* View satus  */}
                     <div className="dropdown dropdown-left">
                       <div tabIndex={1} className="tooltip" data-tip="Status">
@@ -174,35 +173,55 @@ export default function CourseTable() {
                         tabIndex={1}
                         className=" dropdown-content z-[1] menu p-5 shadow bg-base-300 rounded-box w-64"
                       >
-                       <form onSubmit={(e)=>handelUpdateSatus(e,ele._id,ele.status)}>
-                       <select name="status" onChange={(e)=>handelCorsestatus(e,ele._id,ele.status)} defaultValue={ele.status} className="capitalize select select-bordered focus:outline-none w-full max-w-xs">
-                          <option value="pending">pending</option>
-                          <option value="disabled">Disable</option>
-                          <option value="aproved">Aprove</option>
-                        </select>
-                        <div className="flex justify-end mt-4">
-                          <button type="submit" id={ele._id} disabled className="btn btn-neutral">save</button> 
-                        </div>
-                       </form>
+                        <form
+                          onSubmit={(e) =>
+                            handelUpdateSatus(e, ele._id, ele.status)
+                          }
+                        >
+                          <select
+                            name="status"
+                            onChange={(e) =>
+                              handelCorsestatus(e, ele._id, ele.status)
+                            }
+                            defaultValue={ele.status}
+                            className="capitalize select select-bordered focus:outline-none w-full max-w-xs"
+                          >
+                            <option value="pending">pending</option>
+                            <option value="disabled">Disable</option>
+                            <option value="aproved">Aprove</option>
+                          </select>
+                          <div className="flex justify-end mt-4">
+                            <button
+                              type="submit"
+                              id={ele._id}
+                              disabled
+                              className="btn btn-neutral"
+                            >
+                              save
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </div>
 
                     {/* Edit   */}
 
-                     <div  onClick={() =>(
+                    <div
+                      onClick={() =>
                         openModal({
-                         type : "form",
-                         mood: "edit",
-                         fieldname : 'course',
-                         data : ele,
-                        }))
-                     }              
-                     className="tooltip" data-tip="Edit">
+                          type: "form",
+                          mood: "edit",
+                          fieldname: "course",
+                          data: ele,
+                        })
+                      }
+                      className="tooltip"
+                      data-tip="Edit"
+                    >
                       <button className="btn btn-ghost btn-xs text-xl">
                         <i className="fa-solid fa-pen-to-square"></i>
-                        
                       </button>
-                    </div>           
+                    </div>
                     {/* Delete course  */}
 
                     <div className="tooltip" data-tip="Remove">
@@ -220,19 +239,17 @@ export default function CourseTable() {
         <button
           onClick={() =>
             openModal({
-              type : "form",
+              type: "form",
               mood: "add",
-              fieldname : 'course',
-              data : null,
+              fieldname: "course",
+              data: null,
             })
           }
           className="btn-neutral btn "
         >
-          {" "}
           Add New Course<i className="fa-regular fa-circle-plus"></i>
         </button>
       </div>
-     
     </>
   );
 }

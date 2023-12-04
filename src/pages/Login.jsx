@@ -125,7 +125,7 @@ export default function Login() {
               </form>
               <div className="text-center mt-5">
                 <p>
-                  Dont't have an account?{" "}
+                  Dont't have an account?
                   <Link
                     to="/signup"
                     className="capitalize text-sky-500 hover:underline"

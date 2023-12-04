@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/Authntication.jsx";
 import Input from "../components/InputBox.jsx";
@@ -21,7 +21,7 @@ export default function Signup() {
     const password = form.target.password.value;
     const confirmPassword = form.target.confirmPassword.value;
     const phone_number = form.target.phone_number.value;
-    const address = form.target.address.value;
+    // const address = form.target.address.value;
     const avatar = form.target.avatar.files;
     const err = [];
     if (avatar.length === 0) {
@@ -55,10 +55,9 @@ export default function Signup() {
             response.data.error &&
             Object.keys(response.data.error).length > 0
           ) {
-            let errs = [];
             for (let erros in response.data.error) {
               setErrorMsg((old) => [...old, response.data.error[erros].msg]);
-              console.log(response)
+              console.log(response);
             }
           } else {
             if (response.data.success === true) {
@@ -67,14 +66,14 @@ export default function Signup() {
             }
           }
         })
-        .catch(error=>{
-          console.log(error)
+        .catch((error) => {
+          console.log(error);
           // setErrorMsg([error?.message]);
         });
     }
-   if(err.length > 0){
-    // setErrorMsg(err);
-   }
+    if (err.length > 0) {
+      // setErrorMsg(err);
+    }
   };
 
   return (
@@ -173,8 +172,7 @@ export default function Signup() {
                   </div>
                   <div className="form-control mt-6">
                     <button type="submit" className="btn btn-primary">
-                      {" "}
-                      Sign up{" "}
+                      Sign up
                     </button>
                   </div>
                 </form>

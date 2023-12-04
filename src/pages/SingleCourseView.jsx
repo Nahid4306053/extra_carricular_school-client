@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react"; import Rating from "react-rating";
-import { Link, NavLink, useLoaderData, useParams } from "react-router-dom";
+import { useEffect, useState } from "react"; import { Link, useParams } from "react-router-dom";
 import Pagebanner from "../components/Pagebanner";
-import { duration } from "@mui/material";
 import Card from "../components/Card"; 
 import useFetchSingelCourse from "../Hooks/FetchsingelCourse";
 import moment from "moment";
@@ -30,7 +28,7 @@ export default function SingleCourseView() {
       fetchcourses(1,3,category); 
      }
            
-  },[coursedata])          
+  },[category, coursedata, fetchcourses])          
   useEffect(()=>{
 
     if(Courses){
@@ -61,7 +59,7 @@ export default function SingleCourseView() {
       }
       CheackEnrollAvilAvility()
      }
-   },[coursedata])
+   },[_id, coursedata])
   
     const handelCourseWhichList = () =>{
       const oldata = getLocalStorageCourse()
@@ -76,7 +74,7 @@ console.log(isenrolled);
     coursedata &&
         ( < >  
 
-    <Pagebanner backimg={import.meta.env.VITE_IMG_URL +"/courseThumnail/"+thumbnail}>
+    <Pagebanner backimg={thumbnail}>
       <h1 className="sub_title text-xl mb-5"> {slogan} </h1>
       <h1 className="mb-5 text-5xl font-bold">{coursetitle}</h1>
     </Pagebanner>
@@ -88,10 +86,10 @@ console.log(isenrolled);
             <div className="details w-full">
               <div className="mainDetails grid justify-between  items-center grid-cols-2 lg:grid-cols-3">
                 <div className="flex items-center gap-4 text-2xl">
-                  <div className="avatar-group -space-x-6"> {instructors.length > 0 && instructors.map((ele, ind) => {
+                  <div className="avatar-group -space-x-6"> {instructors.length > 0 && instructors.map((ele) => {
                     return (
-                    <Link to={`/single-instructor/${ele._id}`}> <div className="avatar">
-                    <div className="w-12"> <img src={import.meta.env.VITE_IMG_URL+/avatars/+ele.avatar} /> </div>
+                    <Link to={`/single-instructor/${ele._id}`} key={ele._id}> <div className="avatar">
+                    <div className="w-12"> <img src={ele.avatar} /> </div>
                   </div>
                   </Link> ); })}
                 </div>
@@ -137,7 +135,7 @@ console.log(isenrolled);
     </div>
     <div className="mt-40 relatedCourse grid gap-10 grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
       <h1 className="col-span-full text-4xl">Related Courses:</h1> {relatedCourse.length > 1 &&
-      relatedCourse.map((ele,ind)=>{ 
+      relatedCourse.map((ele)=>{ 
        return (
        <Card key={ele._id}  element={ele} /> ) }) }
         {relatedCourse.length === 1 && <p className="text-lg">Not found any data</p>

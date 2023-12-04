@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import useLoadTeachers from "../Hooks/LoadTeachersData";
+/* eslint-disable react-hooks/exhaustive-deps */
+import  { useEffect, useState } from "react";
+
 import Teacher from "../components/Teacher";
 import fetchUserData from '../Hooks/fetchUserData'
 import { uniqBy } from "lodash";

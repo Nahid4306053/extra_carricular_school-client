@@ -11,26 +11,26 @@ export default function AboutLearningEinvrionment() {
           The world’s largest selection of online courses
         </h1>
         <p className="leading-8 text-gray-500 text-lg">
-          Millions of people have used Nahider School to decide which online course to
-          take. We aggregate courses from many universities to help you find the
-          best courses on almost any subject, wherever they exist. Our goal is
-          to make online education work for everyone.
+          Millions of people have used Nahider School to decide which online
+          course to take. We aggregate courses from many universities to help
+          you find the best courses on almost any subject, wherever they exist.
+          Our goal is to make online education work for everyone.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
           <div className="items-center flex gap-4">
-            <i className="text-5xl text-sky-600 fa-light fa-user-graduate"></i>{" "}
+            <i className="text-5xl text-sky-600 fa-light fa-user-graduate"></i>
             <p className="font-bold text-xl">Private Classes</p>
           </div>
           <div className="items-center flex gap-4">
-            <i className="text-5xl text-sky-600 fa-light fa-desktop"></i>{" "}
+            <i className="text-5xl text-sky-600 fa-light fa-desktop"></i>
             <p className="font-bold text-xl">Small Groups</p>
           </div>
           <div className="items-center flex gap-4">
-            <i className="text-5xl text-sky-600 fa-light fa-alarm-clock"></i>{" "}
+            <i className="text-5xl text-sky-600 fa-light fa-alarm-clock"></i>
             <p className="font-bold text-xl">Lifetime Access</p>
           </div>
           <div className="items-center flex gap-4">
-            <i className="text-5xl text-sky-600 fa-light fa-computer-mouse-scrollwheel"></i>{" "}
+            <i className="text-5xl text-sky-600 fa-light fa-computer-mouse-scrollwheel"></i>
             <p className="font-bold text-xl">Online Tutoring</p>
           </div>
         </div>

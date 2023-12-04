@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+
 import TeacherCard from './TeacherCard'
 export default function Teacher({instructors}) {
   return (

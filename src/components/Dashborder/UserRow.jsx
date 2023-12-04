@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function UserRow({ user }) {
   const { pathname } = useLocation();
   const [userdeatils, setuserdetails] = useState(user);
-  const { _id, username, avatar, email, phone_number, address, role, gender } =
+  const { _id, username, avatar, email, phone_number, address, role } =
     userdeatils || {};
 
   const [newrole, setNewRole] = useState(role);
@@ -45,12 +46,7 @@ export default function UserRow({ user }) {
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
               <img
-                src={
-                  import.meta.env.VITE_IMG_URL +
-                  "/avatars/" +
-                  avatar +
-                  import.meta.env.VITE_IMG_TOKEN
-                }
+                src={ avatar }
                 alt={username}
               />
             </div>

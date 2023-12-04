@@ -10,7 +10,7 @@ export default function DashborderSidebar() {
       <div className="h-[25%] dashborder-layout-left-header border-b border-slate-300 py-5 flex items-center">
         <div className="avatra p-2 mx-auto mt-5 overflow-hidden">
           <div className="rounded-full overflow-hidden h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] ring-4">
-           {user && <img className="h-full w-full object-cover" src={import.meta.env.VITE_IMG_URL + "/avatars/" + user.avatar} alt="avatar" />}
+           {user && <img className="h-full w-full object-cover" src={user.avatar} alt="avatar" />}
           </div>
         </div>
       </div>

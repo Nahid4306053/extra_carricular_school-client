@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../Context/Authntication";
 import Input from "../../InputBox";
 export default function Profile() {
@@ -39,7 +39,7 @@ export default function Profile() {
         address: address,
       });
     }
-  }, [readmood, user]);
+  }, [address, phone_number, readmood, user, username]);
 
   const handleuserUpdate = (form) => {
     form.preventDefault();
@@ -100,30 +100,18 @@ export default function Profile() {
           <div className="grid relative justify-center">
             <div className="avatar">
               <div className="w-44 rounded-full ring  ring-offset-base-100 ring-offset-2">
-                {" "}
-                <img
-                  src={
-                    img
-                      ? img
-                      : import.meta.env.VITE_IMG_URL +
-                        "/avatars/" +
-                        avatar +
-                        import.meta.env.VITE_IMG_TOKEN
-                  }
-                />{" "}
+                <img src={img ? img : avatar} />
               </div>
-            </div>{" "}
+            </div>
             {readmood ? (
               <button
                 onClick={() => handleReadmood()}
                 className="btn btn-neutral mt-10"
               >
-                {" "}
                 Update profile
               </button>
             ) : (
               <div className="relative mt-10 flex justify-center">
-                {" "}
                 <input
                   accept=".jpg , .png , .webp , .jpeg"
                   onChange={(e) =>
@@ -136,19 +124,17 @@ export default function Profile() {
                   className="absolute h-14 w-full cursor-pointer opacity-0"
                   name="avatar"
                   id=""
-                />{" "}
-                <button className="btn btn-neutral ">Choose</button>{" "}
+                />
+                <button className="btn btn-neutral ">Choose</button>
               </div>
             )}
           </div>
         </div>
         <div className="lg:col-span-8 col-span-full mt-5 font-semibold infos">
           <div className="form-control">
-            {" "}
             <label className="label">
-              {" "}
-              <span className="label-text">Name</span>{" "}
-            </label>{" "}
+              <span className="label-text">Name</span>
+            </label>
             <input
               ref={usrnameInput}
               onChange={handleinput}
@@ -158,7 +144,7 @@ export default function Profile() {
               type="text"
               placeholder="Name"
               className="input input-bordered"
-            />{" "}
+            />
           </div>
           <Input
             readOnly={true}
@@ -181,7 +167,7 @@ export default function Profile() {
             placeholder="Address"
             label="Address"
             name="address"
-          />{" "}
+          />
           {!readmood && (
             <div className="flex mt-5 justify-between">
               <div className="flex items-center justify-between w-full">

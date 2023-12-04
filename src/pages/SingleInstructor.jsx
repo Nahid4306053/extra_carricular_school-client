@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/jsx-key */
+import { useEffect, useState } from "react";
 import Pagebanner from "../components/Pagebanner";
-import { useLoaderData, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import Card from "../components/Card";
 import useFetchSingelUserWithCourse from "../Hooks/FetchSingelUserWithCourse";
 import axios from "axios";
@@ -12,7 +13,7 @@ import { useAuth } from "../Context/Authntication";
   const {user} = useAuth()
   const [isFollow,SetIsFollow] = useState(false);
   const {userwithCourse} = useFetchSingelUserWithCourse(id,'instructor')
-  const {address ,avatar,email,gender,phone_number,role,username,_id} = instructor || {}
+  const {address ,avatar,email,phone_number,username,_id} = instructor || {}
 
   useEffect(() => {
     if (userwithCourse){
@@ -46,7 +47,7 @@ import { useAuth } from "../Context/Authntication";
      }
      CheackFollow()
     }
-  },[instructor])
+  },[_id, instructor])
 
   const Unfollow = async () =>{
     try{
@@ -66,7 +67,7 @@ import { useAuth } from "../Context/Authntication";
     <div className="my-20 container mx-auto">
     <div className="instructordetils  border-2  border-gray-300  grid md:grid-cols-[1fr,1fr]  lg:grid-cols-[1fr,3fr]">
      <div className="profileImg overflow-hidden md:max-h-full  ">
-           <img src={import.meta.env.VITE_IMG_URL +"/avatars/"+avatar} className="w-full  object-cover object-top box-border md:border-gray-300 md:border-r-2 lg:max-h-72" alt="" />
+           <img src={avatar} className="w-full  object-cover object-top box-border md:border-gray-300 md:border-r-2 lg:max-h-72" alt="" />
       </div> 
       <div className="details flex justify-between p-8 text-2xl ">
        <div className="flex capitalize flex-col gap-5">
@@ -89,7 +90,7 @@ import { useAuth } from "../Context/Authntication";
     md:grid-cols-2">
      <h1 className="col-span-full text-4xl">{username} Courses:</h1>      
     {instructorCourses.length > 0 && 
-    instructorCourses.map((ele,ind)=>{
+    instructorCourses.map((ele)=>{
        return <Card  element={ele}/>
     })
     }     

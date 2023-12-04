@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import useGetAllFollow from "../../../Hooks/GetAllFollow";
 import { map, uniqBy } from "lodash";
 import DashborderSearchBox from "../DashborderSearchBox";
-import UserRow from "../UserRow";
 import { useAuth } from "../../../Context/Authntication";
 import { Link } from "react-router-dom";
 
 export default function Follow() {
   const {fetchFollow,Follows} = useGetAllFollow();
   const [displayfollows,setDisplayfollows] = useState([]);
-  const[page,setpage] = useState(1);
+  const[page] = useState(1);
   const {user} = useAuth()
   useEffect(()=>{
     if(Follows){
@@ -20,10 +19,10 @@ export default function Follow() {
         setDisplayfollows(uniqBy([...displayfollows,...map(Follows,"student")],"_id"))
       }
     }
-  },[Follows])
+  },[Follows, displayfollows, user.role])
   useEffect(()=>{
     fetchFollow(page,10)
-  },[])
+  },[fetchFollow, page])
 
   return (
     <>
@@ -45,13 +44,13 @@ export default function Follow() {
           <tbody>
             {displayfollows.length > 0 &&  
             displayfollows.map((user) => (
-              <tr>
+              <tr key={user.uid}> 
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
                       <img
-                        src={import.meta.env.VITE_IMG_URL + "/avatars/" + user.avatar}
+                        src={user.avatar}
                         alt={user.username}
                       />
                     </div>

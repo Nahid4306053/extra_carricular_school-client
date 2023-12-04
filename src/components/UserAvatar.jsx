@@ -29,12 +29,7 @@ export default function UserAvatar({ user }) {
       <div tabIndex={5} className="avatar cursor-pointer pr-3">
         <div className="w-14 rounded-full ring  ring-offset-base-100 ring-offset-2">
           <img
-            src={
-              import.meta.env.VITE_IMG_URL +
-              "/avatars/" +
-              avatar +
-              import.meta.env.VITE_IMG_TOKEN
-            }
+            src={avatar}
           />
         </div>
       </div>
@@ -45,12 +40,7 @@ export default function UserAvatar({ user }) {
         <div className="avatar">
           <div className="w-24 rounded-full ring ring-offset-base-100 ring-offset-2">
             <img
-              src={`${
-                import.meta.env.VITE_IMG_URL +
-                "/avatars/" +
-                avatar +
-                import.meta.env.VITE_IMG_TOKEN
-              }`}
+              src={`${avatar}`}
             />
           </div>
         </div>

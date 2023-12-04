@@ -1,14 +1,12 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+/* eslint-disable react/prop-types */
+
+import { Link,  } from "react-router-dom";
 
 export default function CourseTablerow({ course, children }) {
   const {
     _id,
     coursetitle,
-    slogan,
     thumbnail,
-    courseduration,
-    startdate,
     coursefee,instructors
   } = course || {};
 
@@ -20,9 +18,7 @@ export default function CourseTablerow({ course, children }) {
             <div className="mask mask-squircle w-24 h-24">
               
               <img
-                src={
-                  import.meta.env.VITE_IMG_URL + "/courseThumnail/" + thumbnail
-                }
+                src={thumbnail }
                 alt={coursetitle}
               />
             </div>
@@ -38,7 +34,7 @@ export default function CourseTablerow({ course, children }) {
         <div className="avatar-group -space-x-6">
           
           {instructors.length > 0 &&
-            instructors.map((ele, ind) => {
+            instructors.map((ele) => {
               return (
                 
                 <Link to={`/single-instructor/${ele._id}`} key={ele._id}>
@@ -46,7 +42,7 @@ export default function CourseTablerow({ course, children }) {
                   <div className="avatar">
                     <div className="w-12">
                       
-                      <img src={import.meta.env.VITE_IMG_URL + "/avatars/" +  ele.avatar} />
+                      <img src={ ele.avatar} />
                     </div>
                   </div>
                 </Link>
