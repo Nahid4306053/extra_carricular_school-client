@@ -1,7 +1,3 @@
-Certainly! Below is a template for a README.md file for your "NahidER School" extra-curricular school management website. Please customize it based on the specifics of your project:
-
----
-
 # NahidER School - Extra-Curricular School Management Website
 
 ## Overview
