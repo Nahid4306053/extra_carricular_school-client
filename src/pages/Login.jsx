@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import axios from "axios";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/Authntication";
 import Log_in from "/images/Log_in.png";
@@ -21,7 +22,7 @@ export default function Login() {
     }
 
     if (err.length === 0) {
-      const formdata = new FormData(form.target);
+      // const formdata = new FormData(form.target);
       axios
         .post(
           `${import.meta.env.VITE_API_URL}/user/login`,
@@ -41,7 +42,7 @@ export default function Login() {
             response.data.error &&
             Object.keys(response.data.error).length > 0
           ) {
-            let errs = [];
+           
             for (let erros in response.data.error) {
               setErrorMsg((old) => [...old, response.data.error[erros].msg]);
             }
@@ -69,7 +70,7 @@ export default function Login() {
             <div className="">
               <img src={Log_in} alt="" />
             </div>
-            <div className="">
+            <div className="max-w-md">
               <div className="">
                 <h1 className="text-5xl font-bold">Login now!</h1>
                 <p className="py-6">
@@ -89,7 +90,7 @@ export default function Login() {
                   </div>
                 )}
               </div>
-              <form onSubmit={handleuserAdd} className="p-4" action="">
+              <form onSubmit={handleuserAdd} className=" p-4" action="">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>

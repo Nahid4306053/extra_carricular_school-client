@@ -13,7 +13,7 @@ export default function Authntication({ children }) {
   const [user, setUser] = useState(null);
 
   const getCurrentuser = async () => {
-    setloading(true);
+    setloading(true);         
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/user/current`,
