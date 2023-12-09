@@ -9,7 +9,7 @@ export default function useFetchSingelCourse(id) {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/course/singel/${id}`,
+            `${import.meta.env.VITE_API_URL}/course/singel/${id}`,
             { withCredentials: true }
           ); 
           if (response.data) {
