@@ -13,7 +13,7 @@ import { useState } from "react";
 export default function MyCourses() {
   const [courses,setcourses] = useState([]);
   const {user} = useAuth()
-  const {userwithCourse} = useFetchSingelUserWithCourse(user._id,user.role)
+  const {userwithCourse,loading} = useFetchSingelUserWithCourse(user._id,user.role)
   useEffect(()=>{
      if(userwithCourse){
 
@@ -27,14 +27,14 @@ export default function MyCourses() {
   
      }
   },[userwithCourse])
-  console.log(courses);
+
   
   return (
     <> 
-    <div className="header bg-slate-300 text-center p-4 sticky top-0">
+    <div className="header bg-sky-100 text-center p-4 sticky top-0">
       <h1 className="text-2xl font-semibold">My Courses</h1>
     </div>
-    {courses.length > 0 ? 
+    {!loading ? courses.length > 0 ? 
     <>
    
         <div className="overflow-x-auto h-[70vh] table_custom  custom-scrollber">
@@ -71,7 +71,10 @@ export default function MyCourses() {
      </>
     :  <div className="h-full flex justify-center items-center w-full">
     <h1 className="text-4xl text-center font-bold">No course found</h1>
-    </div>}
+    </div>
+    :
+     <div className="w-full text-center my-20"><span className="loading loading-spinner loading-lg"></span></div>
+    }
     </>
    
   );

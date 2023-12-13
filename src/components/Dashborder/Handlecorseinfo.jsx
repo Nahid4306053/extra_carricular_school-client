@@ -9,6 +9,7 @@ import { useModal } from "../../Context/ModalContext";
 import usefetchUserData from "../../Hooks/fetchUserData";
 import UploadImg from "../../Utils/UploadIMG";
 import Input from "../../components/InputBox";
+import toast from "react-hot-toast";
 export default function Handlecorseinfo({ data, render }) {
   const {
     _id,
@@ -48,7 +49,7 @@ export default function Handlecorseinfo({ data, render }) {
   };
   const handleselectedInstructors = (Techer) => {
     if (selectedInstructors.includes(Techer.target.value)) {
-      alert("This Instructors already selected");
+      toast.error("This Instructors already selected");
     } else {
       setSelectedInstructors((old) => [...old, Techer.target.value]);
     }

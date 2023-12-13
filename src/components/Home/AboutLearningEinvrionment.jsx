@@ -8,13 +8,13 @@ export default function AboutLearningEinvrionment() {
           Learn how you want, where you want
         </p>
         <h1 className="text-4xl font-bold ">
-          The world’s largest selection of online or offline courses
+          The world’s largest selection of online and offline courses
         </h1>
         <p className="leading-8 text-gray-500 text-lg">
-          Millions of people have used Nahider School to decide which online or offline
+          Millions of people have used Nahider School to decide which online and offline
           course  to take. We aggregate courses from many universities to help
           you find the best courses on almost any subject, wherever they exist.
-          Our goal is to make online education work for everyone.
+          Our goal is to make online and offline education work for everyone.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
           <div className="items-center flex gap-4">

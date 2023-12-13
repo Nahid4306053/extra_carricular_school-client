@@ -2,7 +2,7 @@ import React from "react";
 
 export default function DashborderSearchBox() {
   return (
-    <div className="header sticky flex   bg-slate-200 left-0 z-1 top-0  p-5 w-full">
+    <div className="header sticky flex   bg-sky-100 left-0 z-1 top-0  p-5 w-full">
       <div className="form-control w-full">
         <div className="input-group">
           <input

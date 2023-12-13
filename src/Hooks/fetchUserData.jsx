@@ -6,6 +6,7 @@ export default function usefetchUserData() {
   const [users, setusers] = useState();
    const fetchUsers = async (role, page, limit) => {
       try {
+        setloading(true) 
         const snapshort = await axios.get(
           `${import.meta.env.VITE_API_URL}/user/all?${role ? "role=" + role + "&" : "" }${
             page ? "page=" + page + "&" : ""

@@ -7,6 +7,7 @@ import Card from "../components/Card";
 import useFetchSingelUserWithCourse from "../Hooks/FetchSingelUserWithCourse";
 import axios from "axios";
 import { useAuth } from "../Context/Authntication";
+import toast from "react-hot-toast";
  export default function SingleInstructor() {
   const [instructorCourses, SetInstructorCourses] = useState([]);
   const [instructor, SetInstructor] = useState();
@@ -28,8 +29,8 @@ import { useAuth } from "../Context/Authntication";
    
     try{
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/user/follow/${_id}`,{},{ headers: { "Content-Type": "application/json", }, withCredentials: true, }) 
-      if(res.data.error){ alert(JSON.stringify(res.data.error.msg)) } 
-      else{SetIsFollow(true); alert(JSON.stringify(res.data.msg)); }
+      if(res.data.error){ toast.error(JSON.stringify(res.data.error.msg)) } 
+      else{SetIsFollow(true); toast.success(JSON.stringify(res.data.msg)); }
       }
       catch(err){ console.log(err) }
   }
@@ -40,7 +41,7 @@ import { useAuth } from "../Context/Authntication";
        const sanpshort = await axios.get(`${import.meta.env.VITE_API_URL}/user/follow/${_id}`,{withCredentials:true});
        if(sanpshort.data.follow){
         SetIsFollow(true);
-        console.log(sanpshort.data.follow);
+     
        }   
        else{ 
         SetIsFollow(false);
@@ -53,8 +54,8 @@ import { useAuth } from "../Context/Authntication";
   const Unfollow = async () =>{
     try{
       const res = await axios.delete(`${import.meta.env.VITE_API_URL}/user/unfollow/${_id}`,{withCredentials: true, }) 
-      if(res.data.error){ alert(JSON.stringify(res.data.error.msg)) } 
-      else{SetIsFollow(false) ; alert(JSON.stringify(res.data.msg));}
+      if(res.data.error){ toast.error(JSON.stringify(res.data.error.msg)) } 
+      else{SetIsFollow(false) ; toast.success(JSON.stringify(res.data.msg));}
       }
       catch(err){ console.log(err) }  
   }

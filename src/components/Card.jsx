@@ -48,7 +48,7 @@ export default function Card({
         >
           {coursetitle.slice(0,50)+"..."}
         </Link>
-        <p className="leading-8">{description.slice(0, 100) + " [...]"}</p>
+        <p className="leading-8">{description.slice(0, 100) + "..."}</p>
         <hr className="my-3 border-gray-300" />
         <div className="flex justify-between">
           <p className="text-lg text-sky-500 ">${coursefee}</p>

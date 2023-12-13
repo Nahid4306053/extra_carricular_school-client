@@ -6,7 +6,7 @@ export default function usefetchcourseData() {
   const [Courses, setcourses] = useState();
    const fetchcourses = async (page,limit,category) => {
       try {
-         
+        setloading(true) 
         const snapshort = await axios.get(
           `${import.meta.env.VITE_API_URL}/course/all?${
             page ? "page=" + page + "&" : ""

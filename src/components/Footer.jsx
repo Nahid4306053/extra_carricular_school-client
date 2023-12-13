@@ -2,17 +2,20 @@
 
 import { useLocation } from "react-router-dom";
 
-
+import Newsletter from '../components/NewsLetter'
 import logo from "/images/footer.png";
 export default function Footer() {
   const { Darkmood } = {}
   const { pathname } = useLocation();
-  const paths = ["/login", "/signup" , "/dashborder"];
+  const paths = ["/login", "/signup"];
+  console.log(paths.includes(pathname));
   return (
+    <>
+   { paths.includes(pathname) || !pathname.includes("/dashborder") && <Newsletter></Newsletter> } 
     <footer className={`  pt-10  ${Darkmood ? "bg-base-300" : "bg-[#09253D]"}`}> {/* bg-sky-100 */}
     <div className="grid container mx-auto text-white lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
       <div className="about_info mt-10">
-        <img className="h-14" src={logo} alt="" />
+        <img className="h-24" src={logo} alt="" />
         <br />
         <div className="info mt-5 flex gap-4 items-center">
           <h2 className="text-4xl  text-sky-400 w-10">
@@ -22,7 +25,7 @@ export default function Footer() {
           </h2>
           <div className="location">
             <p>
-              685 Market Street San Francisco, <br /> Dhaka, Bangladesh
+              685 Market Street Mawna, <br /> Dhaka, Bangladesh
             </p>
           </div>
         </div>
@@ -46,44 +49,28 @@ export default function Footer() {
             <p>Mail us ku4306053@gmail.com</p>
           </div>
         </div>
-        <div className="socials flex gap-4">
-          <a className="rounded-full mt-4" href="/">
-            <i className="fa-brands fa-facebook"></i>
-          </a>
-          <a className="rounded-full mt-4" href="/">
-            <i className="fa-brands fa-twitter"></i>
-          </a>
-          <a className="rounded-full mt-4" href="/">
-            <i className="fa-brands fa-youtube"></i>
-          </a>
-          <a className="rounded-full mt-4" href="/">
-            <i className="fa-brands fa-instagram"></i>
-          </a>
-          <a className="rounded-full mt-4" href="/">
-            <i className="fa-brands fa-github"></i>
-          </a>
-        </div>
+
       </div>
-      <div className="links mt-10">
-        <h1 className="shops mt-4 text-2xl font-bold text-sky-400">Shops</h1>
+      <div className="links mt-10 lg:ml-5">
+        <h1 className="shops mt-4 text-2xl font-bold text-sky-400">Quick Links</h1>
         <ul className="mt-8 w-auto ">
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            New Collections
+           Courses
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            Trending product
+            Trending Courses
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
             Sale and Special offers
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            Top brends
+            Instructors
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            Smart phones
+            Contuct us
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            Desktop{" "}
+            Careers
           </li>
         </ul>
       </div>
@@ -93,23 +80,23 @@ export default function Footer() {
         </h1>
         <ul className="mt-8 w-auto ">
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
-            About{" "}
+            
+            About
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
+            
             Customer Service
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
+            
             Reward Program
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
+            
             Shipping & Returns
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
+            
             Privacy Policy
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
@@ -123,27 +110,23 @@ export default function Footer() {
         </h1>
         <ul className="mt-8 w-auto ">
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
-            Search Terms{" "}
+            Search Terms
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
-            Advanced Search{" "}
+            Advanced Search
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
-            Orders And Returns{" "}
+            Book And Restore
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
-            Shipping & Contact Us
+             Help & Support
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            {" "}
+            
             Consultant
           </li>
           <li className="leading-10 hover:text-sky-400 hover:underline cursor-pointer">
-            Store Locations
+            Branch Locations
           </li>
         </ul>
       </div>
@@ -152,9 +135,9 @@ export default function Footer() {
      <div className={`coppwright  ${Darkmood ? "bg-[#0e1218]" : "bg-[#051b30]"}  `}>
      <div className="container py-6 mx-auto mt-10 flex-col gap-5 lg:flex-row flex justify-between items-center">
       <span className="text-sm text-white text-center w-full">
-        © {new Date().getFullYear()}{" "}
+        © {new Date().getFullYear()}
         <a href="#" className="hover:underline">
-          NahidTechNoWorld™
+          NahidERScholl™
         </a>
         . All Rights Reserved.
       </span>
@@ -163,6 +146,6 @@ export default function Footer() {
       </div>
     </div>
      </div>
-  </footer>
+  </footer></>
   );
 }

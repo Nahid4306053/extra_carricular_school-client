@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useloadBanner from "../../Hooks/loadBanner";
+import moment from "moment";
 export default function Banner({ serchinputdata, children, bannrBacgorund }) {
   const serchInput = useRef();
   const benners = useloadBanner();
@@ -64,14 +65,14 @@ export default function Banner({ serchinputdata, children, bannrBacgorund }) {
                         </p>
                         <div className="flex gap-5 flex-wrap">
                           <p className=" text-[#d9b13b] font-bold text-lg">
-                                  <i className="mr-3 fa-solid fa-flag-checkered"></i>
-                                  Starting: {startDate}
+                            <i className="mr-3 fa-solid fa-flag-checkered"></i>
+                              Starting: {moment(startDate).format('MMMM Do YYYY')}
                    
                           </p>
                           <p className=" text-[#d9b13b] font-bold text-lg">
                             
                           <i className="mr-3 fa-solid fa-ballot-check"></i>
-                            Ending: {startDate}
+                            Ending: {moment(endDate).format('MMMM Do YYYY')}
                           </p>
 
                         </div>
@@ -86,11 +87,11 @@ export default function Banner({ serchinputdata, children, bannrBacgorund }) {
                           })}
                         </div>
                         <div className="actoions gap-5 mt-2 flex">
-                          <button className="btn btn-info text-white">
+                          <button className="btn  btn-info text-white">
                             Enroll Now
                           </button>
-                          <button className="btn btn-info text-white">
-                            view more
+                          <button className="btn  btn-info text-white">
+                            Explore more
                           </button>
                         </div>
                       </div>

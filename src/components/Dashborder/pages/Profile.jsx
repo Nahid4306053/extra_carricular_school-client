@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../Context/Authntication";
 import UploadImg from "../../../Utils/UploadIMG";
 import Input from "../../InputBox";
+import toast from "react-hot-toast";
 export default function Profile() {
   const usrnameInput = useRef();
   const [readmood, setReadmood] = useState(true);
@@ -87,7 +88,7 @@ export default function Profile() {
           console.log(error);
         });
     } else {
-      alert("No changes found");
+      toast.error("No changes found");
     }
   };
 

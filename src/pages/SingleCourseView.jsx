@@ -8,12 +8,13 @@ import usefetchcourseData from "../Hooks/FetchCourseData";
 import useWhichList from "../Hooks/WhichList";
 import { useAuth } from "../Context/Authntication";
 import axios from "axios";
+import toast from "react-hot-toast";
 export default function SingleCourseView() {
 
   const {user} = useAuth()
   const { id } = useParams(); 
   const {addCourseinLocalStorage,getLocalStorageCourse} = useWhichList()
-  const {coursedata} = useFetchSingelCourse(id || null)
+  const {coursedata,loading} = useFetchSingelCourse(id || null)
   const [relatedCourse, setrelatedCourse] = useState([]);
   const {Courses,fetchcourses} = usefetchcourseData()
   const [isenrolled,setIsenrolled] = useState(false);
@@ -29,7 +30,7 @@ export default function SingleCourseView() {
       fetchcourses(1,3,category); 
      }
            
-  },[category, coursedata, fetchcourses])          
+  },[category, coursedata])          
   useEffect(()=>{
 
     if(Courses){
@@ -41,8 +42,8 @@ export default function SingleCourseView() {
      const handelCoursseEnroll = async () =>{
      try{
        const res = await axios.post(`${import.meta.env.VITE_API_URL}/course/enroll/${_id}`,{},{ headers: { "Content-Type": "application/json", }, withCredentials: true, }) 
-         if(res.data.error){ alert(JSON.stringify(res.data.error.msg)) } 
-         else{ alert(JSON.stringify(res.data.msg)); setIsenrolled(true);}
+         if(res.data.error){ toast.error(JSON.stringify(res.data.error.msg)) } 
+         else{ toast.success(JSON.stringify(res.data.msg)); setIsenrolled(true);}
          } 
      catch(err){ console.log(err) } }
 
@@ -64,8 +65,9 @@ export default function SingleCourseView() {
   
     const handelCourseWhichList = () =>{
       const oldata = getLocalStorageCourse()
-      if(oldata.includes(_id)){ alert("allready added")}
-      else{ 
+      if(oldata.includes(_id)){ toast.error("already added")}
+      else{
+        toast.success("add to Wiselist Successfully") 
         addCourseinLocalStorage(_id)
         
       }
@@ -75,7 +77,7 @@ export default function SingleCourseView() {
 
 
   return ( < > { 
-    coursedata &&
+  !loading ?  coursedata &&
         ( < >  
 
     <Pagebanner backimg={thumbnail}>
@@ -147,4 +149,9 @@ export default function SingleCourseView() {
     </div>
     </div> 
 
-  </> )} </> ); }
+  </> )
+  :  <div className="w-full text-center mt-32 min-h-[500px]">
+  <span className="loading  loading-spinner loading-lg"></span>
+</div>
+  
+  } </> ); }

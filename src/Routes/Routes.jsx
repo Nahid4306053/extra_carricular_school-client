@@ -17,7 +17,7 @@ import Courses from "../pages/courses";
 import Users from "../components/Dashborder/pages/Users";
 import Students from "../components/Dashborder/Students";
 import InstructorTable from "../components/Dashborder/pages/InstructorTable";
-import CourseTablerow from "../components/Dashborder/CourseTablerow";
+// import CourseTablerow from "../components/Dashborder/CourseTablerow";
 import CourseTable from "../components/Dashborder/pages/CourseTable";
 import Authntication from "../Context/Authntication";
 import Notice from "../components/Dashborder/pages/Notice";

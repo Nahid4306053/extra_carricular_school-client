@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import  { useEffect, useState } from "react";
 import useGetAllFollow from "../../../Hooks/GetAllFollow";
 import { map, uniqBy } from "lodash";
@@ -5,10 +6,11 @@ import DashborderSearchBox from "../DashborderSearchBox";
 import { useAuth } from "../../../Context/Authntication";
 import { Link } from "react-router-dom";
 
-export default function Follow() {
-  const {fetchFollow,Follows} = useGetAllFollow();
+export default function Follow() { 
+  const[page] = useState(1)
+  const {fetchFollow,Follows,loading} = useGetAllFollow(page);
   const [displayfollows,setDisplayfollows] = useState([]);
-  const[page] = useState(1);
+ 
   const {user} = useAuth()
   useEffect(()=>{
     if(Follows){
@@ -19,17 +21,17 @@ export default function Follow() {
         setDisplayfollows(uniqBy([...displayfollows,...map(Follows,"student")],"_id"))
       }
     }
-  },[Follows, displayfollows, user.role])
+  },[Follows, user])
   useEffect(()=>{
     fetchFollow(page,10)
-  },[fetchFollow, page])
+  },[page])
 
   return (
     <>
     <>
      <DashborderSearchBox></DashborderSearchBox>
     </>
-    {displayfollows.length > 0 ? 
+    { displayfollows.length > 0 ? 
         <div className="overflow-x-auto h-[70vh] custom-scrollber table_custom  ">
         <table className="table-pin-rows table ">
           {/* head */}
@@ -44,7 +46,7 @@ export default function Follow() {
           <tbody>
             {displayfollows.length > 0 &&  
             displayfollows.map((user) => (
-              <tr key={user.uid}> 
+              <tr key={user._id}> 
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
@@ -59,6 +61,7 @@ export default function Follow() {
                     <div className="font-bold">{user.username}</div>
                     <div className="text-sm opacity-50">{user.role}</div>
                   </div>
+
                 </div>
               </td>
               <td>
@@ -87,17 +90,19 @@ export default function Follow() {
             </tr>
             ))}
           </tbody>
-          
         </table>
-        {/* {loading && <div className="w-full text-center"><span className="loading loading-spinner loading-lg"></span></div>} */}
+        
       </div> 
-      
-    
+
     :
-    <div className="h-full flex justify-center items-center w-full">
+
+    <>
+    {loading ? <div className="w-full text-center my-20"><span className="loading loading-spinner loading-lg"></span></div>
+     : <div className="h-full flex justify-center items-center w-full">
       <h1 className="text-center text-5xl font-bold">
         No follower Found
       </h1>
     </div>}
+    </>}
   </>);
 }

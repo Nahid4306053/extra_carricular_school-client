@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
 import  { useState } from "react";
+import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 
 export default function UserRow({ user }) {
@@ -16,7 +17,7 @@ export default function UserRow({ user }) {
   };
   const UpdateRole = () => {
     if (role === newrole) {
-      alert("The role already Existing");
+      toast.error("The role already Existing");
     } else {
       axios
         .put(

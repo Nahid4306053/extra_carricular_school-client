@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import MobileHeader from "./MobileHeader";
 import NavbarManus from "./NavbarManus";
 import logo from "/images/web_logo.png";
@@ -8,7 +8,8 @@ import UserAvatar from "./UserAvatar";
 import { useAuth } from "../Context/Authntication";
 export default function Navbar() {
   const {user} = useAuth()
-
+  const {pathname} = useLocation();
+  const paths = ['/login','/signup']
   const [Manue, SetManue] = useState(false);
   const [stickyheader, setStcikyHeader] = useState(false);
   const routes = [
@@ -39,12 +40,12 @@ export default function Navbar() {
       <header
         className={`  ${
           stickyheader
-            ? "mt-0 fixed w-full  bg-sky-100 shadow-2xl transition-all duration-500"
+            ? `mt-0 fixed w-full  ${paths.includes(pathname) ? "bg-sky-200 ":"bg-sky-100"} shadow-2xl transition-all duration-500`
             : " md:rounded-lg md:container md:mt-10  relative"
         } mx-auto  text-[#1F2937]  z-50 w-full`}
       >
         <nav
-          className={`navbar w-full mx-auto ${!stickyheader && "shadow-lg"}  rounded-lg bg-sky-100  ${stickyheader && "md:container"}`}
+          className={`navbar w-full mx-auto ${!stickyheader && "shadow-lg"}  rounded-lg ${paths.includes(pathname) ? "bg-sky-200 bg-opacity-50":"bg-sky-100"}   ${stickyheader && "md:container"}`}
         >
           <div className="navsection flex justify-between w-full">
             <div className="navbrend text-2xl font-bold">

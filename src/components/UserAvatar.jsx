@@ -48,24 +48,25 @@ export default function UserAvatar({ user }) {
           </div>
         </div>
         <h2 className="userName mt-4 font-bold  capitalize">
-          {role} ID: {_id.slice(0, 6)}
+          {role} ID: {_id.slice(15,24)}
         </h2>
         <h2 className="userName mt-2 font-bold text-xl">{username}</h2>
          <div>
           
          <div className={`text-start  mt-4 space-y-2 text-lg font-bold  `}>
+         <hr className={`border mt-3 border-sky-200  border-opacity-40 `} />
           <div>
             <Link className="space-x-5" to="/dashborder/profile">
               <i className="fa-solid fa-chart-mixed"></i> Dashboard
             </Link>
           </div>
           <div>
-            <Link className="space-x-5" to="/dashboard/announcements">
+            <Link className="space-x-5" to="/dashborder/notice">
               <i className="fa-regular fa-bullhorn mr-2"></i>Emergency Notice
             </Link>
           </div>
         </div>
-        <hr className={`border mt-3   border-opacity-5 `} />
+        <hr className={`border mt-3 border-sky-200  border-opacity-40 `} />
         <div className={`text-start  mt-3 space-y-2 text-lg font-bold  `}>
           <div>
             <div onClick={handelLogout}>

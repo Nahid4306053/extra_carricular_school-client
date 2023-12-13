@@ -16,6 +16,7 @@ import usefetchcourseData from "../Hooks/FetchCourseData";
 import fetchUserData from '../Hooks/fetchUserData'
 import { uniqBy } from "lodash";
 import CourseBanner from "../components/Home/CourseBanner";
+import Blogs from "../components/Blogs";
 export default function Home() {
   const datas = useLoaderData();
   const [displyeData,setdisplyeData] = useState([]);
@@ -56,7 +57,7 @@ export default function Home() {
       <Banner serchinputdata={handleSearch} />
       <AboutLearningEinvrionment/>
       <div className="grid gap-10 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1  mb-28 container mx-auto">
-      <div className=" capitalize container mx-auto text-center col-span-full mt-28 mb-20 space-y-2">
+      <div className=" capitalize container mx-auto text-center col-span-full mt-28 mb-20 space-y-4">
       <h3 className="text-xl text-sky-500">Embark on a Learning Adventure</h3>
        <h1 className="text-5xl mb-5 font-bold">Explore Our Courses</h1>
 
@@ -72,7 +73,7 @@ export default function Home() {
         }
         </div>
         <CourseBanner></CourseBanner> 
-        <div className=" capitalize container mx-auto text-center  my-28 space-y-2">
+        <div className=" capitalize container mx-auto text-center  my-28 space-y-4">
           <h3 className="text-xl text-sky-500">Explore our creator</h3>
           <h1 className="text-5xl mb-5 font-bold">Our Genious Instructors</h1>
           </div>
@@ -93,15 +94,15 @@ export default function Home() {
 
        
        <Link to="/events"> <ViewAllBtn>view all events</ViewAllBtn></Link>
-        <div className=" capitalize container mx-auto text-center mt-20 my-28 space-y-2">
+        <div className=" capitalize container mx-auto text-center mt-20 my-28 space-y-4">
         <h3 className="text-xl text-sky-500">Immerse Yourself in Our Activities</h3>
          <h1 className="text-5xl mb-5 font-bold"> Our Captivating Gallery</h1>
 
         </div>
         {Gallerys.length > 0 &&   <Gellary  elements={Gallerys.slice(0,6)}/> }
-        <div className="col-span-12 flex justify-end container mx-auto"><button className="btn btn-info text-white my-20">View all Activites<i className="fa-thin fa-arrow-right"></i></button></div> 
+        <div className="col-span-12 flex justify-end container mx-auto"><Link to="/schoolEvents"><button className="btn btn-info text-white my-20">View all Events<i className="fa-thin fa-arrow-right"></i></button></Link></div> 
         
-
+         <Blogs></Blogs>
 
        
     </div>

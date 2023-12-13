@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { uniqBy } from "lodash";
 import React, { useEffect, useState } from "react";
@@ -6,22 +8,21 @@ import { useModal } from "../../../Context/ModalContext";
 import usefetchcourseData from "../../../Hooks/FetchCourseData";
 import "../../../styles/CustomTable.scss";
 import CourseTablerow from "../CourseTablerow";
+import toast from "react-hot-toast";
 export default function CourseTable() {
   const navigate = useNavigate();
-  const { Courses, fetchcourses } = usefetchcourseData();
+  const { Courses, fetchcourses, loading } = usefetchcourseData();
   const { closeModel, Updatedata, setupdate, openModal } = useModal();
   const [page, setpage] = useState(1);
-  const [loading, setloading] = useState(false);
+
   const [displayCourses, setDisplayCourses] = useState([]);
 
   const handelData = async (e) => {
     if (e.target.scrollTop === e.target.scrollHeight - e.target.offsetHeight) {
       if (Courses.totalData !== displayCourses.length) {
         setpage(page + 1);
-        setloading(true);
         await fetchcourses(page, 5);
         setDisplayCourses(uniqBy([...displayCourses, ...Courses.data], "_id"));
-        setloading(false);
       }
     }
   };
@@ -47,7 +48,6 @@ export default function CourseTable() {
       if (updateIndex > -1) {
         newdata.splice(updateIndex, 1, Updatedata);
         setDisplayCourses(newdata);
-      
       } else {
         const newdata = [...displayCourses];
         newdata.push(Updatedata);
@@ -69,7 +69,7 @@ export default function CourseTable() {
     form.preventDefault();
     const newdata = form.target.status.value;
     if (oldvalue === newdata) {
-      alert("No changes found");
+      toast.error("No changes found");
     } else {
       try {
         const snapshort = await axios.put(
@@ -95,16 +95,16 @@ export default function CourseTable() {
             setDisplayCourses(newdata);
           }
         } else {
-          alert(snapshort.data.msg);
+          toast.error(snapshort.data.msg);
         }
       } catch (err) {
-        alert("Something went wrong");
+        toast.error("Something went wrong");
       }
     }
   };
   return (
     <>
-      <div className="header sticky flex   bg-slate-200 left-0  top-0  p-5 w-full">
+      <div className="header sticky flex   bg-sky-100 left-0  top-0  p-5 w-full">
         <div className="form-control w-full">
           <div className="input-group">
             <input
@@ -234,6 +234,11 @@ export default function CourseTable() {
               })}
           </tbody>
         </table>
+        {loading && (
+          <div className="w-full text-center my-5">
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
+        )}
       </div>
       <div className="flex justify-end items-center  px-4 py-2">
         <button

@@ -28,7 +28,7 @@ export default function Gellary({ elements , customCss }) {
                   <h1 onClick={()=>openModal(dataformodel)} className="text-white hover:text-sky-500 transition-all text-2xl font-bold">
                     {title}
                   </h1>
-                  <p>{description.slice(0, 65) + " [..]"}</p>
+                  <p>{description.slice(0, 65) + "..."}</p>
                 </div>
               </div>
             </div>
