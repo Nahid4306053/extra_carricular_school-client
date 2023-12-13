@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import UserRow from "./UserRow";
 import useLoadStudentData from "../../Hooks/loadStudentData";

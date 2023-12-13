@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { Masonry } from "@mui/lab";
 import React from "react";
 import "../styles/gellary.scss";
@@ -18,7 +20,7 @@ export default function Gellary({ elements , customCss }) {
           return (
             <div
               key={ind}
-              className="gellary rounded-lg overflow-hidden relative"
+              className="gellary rounded-md overflow-hidden relative"
             >
               <img className="w-full" src={image_url} alt={title} />
               <div className="flex items-end details p-6  h-full w-full absolute top-0 left-0">

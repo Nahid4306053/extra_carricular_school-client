@@ -19,6 +19,7 @@ export default function useFetchSingelCourse(id) {
             console.log(response.data.error);
           }
         } catch (err) {
+          setCoursedata(null);
           console.log(err);
         }
       };

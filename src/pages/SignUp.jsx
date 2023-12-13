@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/Authntication.jsx";
+import UploadImg from "../Utils/UploadIMG.jsx";
 import Input from "../components/InputBox.jsx";
 import "../styles/SignUp.scss";
-import UploadImg from '../Utils/UploadIMG.jsx';
 export default function Signup() {
   const { getCurrentuser } = useAuth();
   const [img, setimg] = useState();
@@ -45,11 +45,12 @@ export default function Signup() {
 
     if (err.length === 0) {
       const formdata = new FormData(form.target);
-      if(avatar.length === 1){
+      if (avatar.length === 1) {
         const url = await UploadImg(avatar[0]);
-        formdata.set("avatar",url.data.data.display_url)    
-       }
-      axios.post(`${import.meta.env.VITE_API_URL}/user`, formdata, {
+        formdata.set("avatar", url.data.data.display_url);
+      }
+      axios
+        .post(`${import.meta.env.VITE_API_URL}/user`, formdata, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -61,7 +62,7 @@ export default function Signup() {
           ) {
             for (let erros in response.data.error) {
               setErrorMsg((old) => [...old, response.data.error[erros].msg]);
-              console.log(response);
+              
             }
           } else {
             if (response.data.success === true) {
@@ -81,9 +82,9 @@ export default function Signup() {
   };
 
   return (
-    <div className="hero sighup-hero -mt-36 min-h-screen py-20">
+    <div className="hero bg-sky-100 -mt-36 min-h-screen py-20">
       <div className="container">
-        <div className="card  w-full mt-40  bg-base-100">
+        <div className="card  w-full mt-40  bg-base-200">
           <div className="p-10 min-h-[60vh] items-center grid lg:grid-cols-[1fr,1fr]  gap-10">
             <div className="hidden overflow-hidden max-h-[800px] lg:flex items-center bg-gray-900 h-full rounded-lg">
               <img
@@ -95,7 +96,7 @@ export default function Signup() {
             <div className="flex flex-col justify-evenly">
               <div>
                 <h1 className="text-4xl font-bold text-center">Sign Up</h1>
-                <p className="text-center text-gray-600">
+                <p className="text-center mt-3 text-gray-600">
                   Enter your details below
                 </p>
               </div>
@@ -132,7 +133,7 @@ export default function Signup() {
                   />
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Profile Picture</span>
+                      <span className="text-lg ">Profile Picture</span>
                     </label>
                     <input
                       onChange={handleimg}
@@ -150,7 +151,7 @@ export default function Signup() {
                   <Input placeholder="Address" label="Address" name="address" />
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Gender</span>
+                      <span className="text-lg ">Gender</span>
                     </label>
                     <div className="flex gap-6 mt-2">
                       <div className="flex gap-2">
@@ -180,6 +181,17 @@ export default function Signup() {
                     </button>
                   </div>
                 </form>
+                <div className="text-center mt-5">
+                  <p>
+                    Already have an account?
+                    <Link
+                      to="/login"
+                      className="pl-2 capitalize text-sky-500 hover:underline"
+                    >
+                      Log in
+                    </Link>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

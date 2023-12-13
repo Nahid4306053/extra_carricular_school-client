@@ -21,9 +21,9 @@ export default function DashborderSidebar() {
          {user.role === "student" &&
          <TabItem path="/dashborder/whichlist-courses" label={'Whichlist Courses'}> <i className="fa-duotone fa-bookmark"></i></TabItem>}
 
-        {(user.role === "student" || "instructor") && <TabItem path="/dashborder/my-courses" label={'My Courses'}><i className="fa-duotone fa-book"></i></TabItem>
+        {(user.role === ("student" || "instructor")) && <TabItem path="/dashborder/my-courses" label={'My Courses'}><i className="fa-duotone fa-book"></i></TabItem>
          }
-          {(user.role === "student" || "instructor" ) &&
+          {(user.role === ("student" ||  "instructor") ) &&
          <TabItem path="/dashborder/follow" label={user.role === "student" ? 'Following instructor' :"My Followers"}><i className="fa-solid fa-heart"></i></TabItem>}
         
          <TabItem path="/dashborder/notice" label={'Emergency Notice'}> <i className="fa-solid fa-light-emergency"></i></TabItem> 
@@ -35,7 +35,7 @@ export default function DashborderSidebar() {
          {user.role === "admin" && 
          <TabItem path="/dashborder/instructors" label={'Instructors'}> <i className="fa-solid fa-person-chalkboard"></i></TabItem>}
          {user.role === "admin" && 
-         <TabItem path="/dashborder/coursetable" label={'Courses'}> <i className="fa-light fa-book-open"></i></TabItem> }
+         <TabItem path="/dashborder/coursetable" label={'Manage Courses'}> <i className="fa-light fa-book-open"></i></TabItem> }
          {user.role === "admin" && 
          <TabItem path="/dashborder/events" label={'Events'}><i className="fa-duotone fa-calendar-days"></i></TabItem>}
         {user.role === "admin" && 

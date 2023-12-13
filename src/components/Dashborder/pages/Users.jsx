@@ -13,18 +13,18 @@ export default function Users() {
   const students = useLoadStudentData();
   const [displayuser, setDisplayuser] = useState([]) 
   const [page,setpage] = useState(1);
-  const {users,fetchUsers} = usefetchUserData();
-  const [loading,setloading] = useState(false);
+  const {users,fetchUsers,loading} = usefetchUserData();
+ 
  
   const handelData = async (e) =>{
     if(e.target.scrollTop  === (e.target.scrollHeight - e.target.offsetHeight )){
      if(users.totaluser !== displayuser.length){
-      console.log("call")
+   
       setpage(page+1)
-      setloading(true)
+    
       await  fetchUsers('',page,10);
       setDisplayuser(uniqBy([...displayuser,...users.data],'_id'))
-      setloading(false)
+    
      }
     }
   }
@@ -61,7 +61,7 @@ export default function Users() {
         </tbody>
         
       </table>
-      {loading && <div className="w-full text-center"><span className="loading loading-spinner loading-lg"></span></div>}
+      {loading && <div className="w-full text-center my-4"><span className="loading loading-spinner loading-lg"></span></div>}
     </div>             
 
     </>

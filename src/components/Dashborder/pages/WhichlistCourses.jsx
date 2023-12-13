@@ -10,8 +10,7 @@ import { useEffect } from "react";
 import axios from "axios";
 export default function WhichlistCourses() {
   const [wichlistCoursse,setWichlistCourses] = useState([])
-  const {getLocalStorageCourse} = useWhichList()
-  useEffect(()=>{
+  const {getLocalStorageCourse,removeCourseFromLocalStorage} = useWhichList()
    const fetchWichlist = async () =>{
      try{
       const body =getLocalStorageCourse();
@@ -35,9 +34,14 @@ export default function WhichlistCourses() {
        console.log(err)
      }
    }
+   useEffect(()=>{
+  
    fetchWichlist()
   },[])
-
+  const removefromwhislist =async (id)=>{
+    removeCourseFromLocalStorage(id);
+    await fetchWichlist()
+  }
   return ( <>
   <div className="header w-full bg-slate-300 p-4 sticky top-0 text-center">
     <h1 className="text-2xl font-semibold">WhichLists</h1>
@@ -67,7 +71,7 @@ export default function WhichlistCourses() {
                   </Link>
 
                   <div className="tooltip" data-tip="Remove">
-                    <button className="btn btn-ghost btn-xs text-xl">
+                    <button onClick={()=>removefromwhislist(ele._id)} className="btn btn-ghost btn-xs text-xl">
                       <i className="fa-solid fa-trash-can"></i>
                     </button>
                   </div>

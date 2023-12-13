@@ -1,4 +1,4 @@
-import React from "react";
+
 import { ThreeCircles } from "react-loader-spinner";
 import { Outlet, useNavigation } from "react-router-dom";
 import "../app.css";
@@ -8,15 +8,17 @@ import Footer from "../components/Footer";
 import { ModalContext } from "../Context/ModalContext";
 import Modal from "../components/Modal";
 import PrivateRouter from "../Routes/PrivateRouter";
+import { Toaster } from "react-hot-toast";
 
 export default function MainLayouts() {
   const navigation = useNavigation();
-
+ 
   return (
    <>
    <ModalContext>
    <div className="min-h-screen  flex flex-col justify-between">
       <div>
+      <div><Toaster/></div>
         <Navbar />
          <Modal></Modal>
         {navigation.state === "loading" ? (

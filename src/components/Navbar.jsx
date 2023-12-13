@@ -37,14 +37,14 @@ export default function Navbar() {
   return (
     <> 
       <header
-        className={` bg-gray-200 ${
+        className={`  ${
           stickyheader
-            ? "mt-0 fixed w-full shadow-2xl transition-all duration-500"
-            : " md:rounded-lg md:container md:mt-10 relative"
+            ? "mt-0 fixed w-full  bg-sky-100 shadow-2xl transition-all duration-500"
+            : " md:rounded-lg md:container md:mt-10  relative"
         } mx-auto  text-[#1F2937]  z-50 w-full`}
       >
         <nav
-          className={`navbar w-full mx-auto ${stickyheader && "md:container"}`}
+          className={`navbar w-full mx-auto ${!stickyheader && "shadow-lg"}  rounded-lg bg-sky-100  ${stickyheader && "md:container"}`}
         >
           <div className="navsection flex justify-between w-full">
             <div className="navbrend text-2xl font-bold">

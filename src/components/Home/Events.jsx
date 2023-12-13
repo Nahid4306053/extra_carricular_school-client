@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import EventCard from "../EventCard";
 import { handleorder } from "../../Utils/HandlesOrder";
 import useLoadEvents from "../../Hooks/LoadEvents";
@@ -54,11 +54,7 @@ export default function Events() {
 
   return (
     <div id="container2" className="container mx-auto ">
-      <div className="col-span-full">
-        <h1 className="text-4xl mb-5 font-bold">
-          Our events
-        </h1>
-      </div>
+
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

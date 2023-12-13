@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -46,14 +48,14 @@ export default function Banner({ serchinputdata, children, bannrBacgorund }) {
             return (
               <SwiperSlide key={ind}>
                 <div key={ind} className="hero min-h-screen  ">
-                  <div className="col-start-1 row-start-1 h-full w-full bg-slate-800 "></div>
+                  <div className="col-start-1 row-start-1 h-full w-full bg-base-300 "></div>
                   <div className="container py-20 mt-20">
                     <div className="flex lg:flex-row flex-col  gap-10">
-                      <div className="flex-1  text-white flex flex-col gap-4 justify-center">
+                      <div className="flex-1 space-y-3 text-white flex flex-col gap-4 justify-center">
                         <h1 className="text-2xl text-orange-400">
                           {programTitle}
                         </h1>
-                        <h1 className="text-4xl  text-white font-bold">
+                        <h1 className="text-4xl  text-sky-400 font-bold">
                           {slogan}
                         </h1>
                         <p className=" text-sky-500 font-bold text-xl">
@@ -71,12 +73,9 @@ export default function Banner({ serchinputdata, children, bannrBacgorund }) {
                           <i className="mr-3 fa-solid fa-ballot-check"></i>
                             Ending: {startDate}
                           </p>
-                          <p className=" text-[#d9b13b] font-bold text-lg">
-                          <i className="mr-3 fa-solid fa-chart-line-down"></i>
-                            Deadline: {startDate}
-                          </p>
+
                         </div>
-                        <div className="text-green-200 font-bold">
+                        <div className="text-green-500 space-y-3 font-bold">
                           {benefits.map((ele, ind) => {
                             return (
                               <li key={ind} className="leading-7">

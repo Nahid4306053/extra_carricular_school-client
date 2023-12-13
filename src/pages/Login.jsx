@@ -61,22 +61,20 @@ export default function Login() {
 
     setErrorMsg(err);
   };
-  console.log(import.meta.VITE_API_URL);
+
   return (
-    <div className="hero -mt-36 min-h-screen bg-purple-600">
+    <div className="hero -mt-36 min-h-screen shadow-lg bg-sky-100">
       <div className="container">
-        <div className="card  w-full mt-40  bg-base-100">
+        <div className="card  w-full mt-40  mb-40">
           <div className="p-10 min-h-[60vh] grid grid-cols-[1fr,1fr] items-center gap-10">
             <div className="">
               <img src={Log_in} alt="" />
             </div>
-            <div className="max-w-md">
+            <div className="max-w-lg bg-base-100 p-10 rounded-lg bg-opacity-75">
               <div className="">
                 <h1 className="text-5xl font-bold">Login now!</h1>
                 <p className="py-6">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  Welcome Back To Nahider School, Please Log In to Your Account By Provide Required Information
                 </p>
                 {errmsg.length > 0 && (
                   <div className="errobox py-4 px-5">
@@ -93,7 +91,7 @@ export default function Login() {
               <form onSubmit={handleuserAdd} className=" p-4" action="">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Email</span>
+                    <span className="text-lg">Email</span>
                   </label>
                   <input
                     type="text"
@@ -104,7 +102,7 @@ export default function Login() {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Password</span>
+                    <span className="text-lg">Password</span>
                   </label>
                   <input
                     type="text"
@@ -113,7 +111,7 @@ export default function Login() {
                     name="password"
                   />
                   <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
+                    <a href="#" className="text-lg- link link-hover">
                       Forgot password?
                     </a>
                   </label>
@@ -129,9 +127,9 @@ export default function Login() {
                   Dont't have an account?
                   <Link
                     to="/signup"
-                    className="capitalize text-sky-500 hover:underline"
+                    className="pl-2 capitalize text-sky-500 hover:underline"
                   >
-                    sign up
+                     sign up
                   </Link>
                 </p>
               </div>

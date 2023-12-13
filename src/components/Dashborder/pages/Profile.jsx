@@ -2,8 +2,8 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../Context/Authntication";
+import UploadImg from "../../../Utils/UploadIMG";
 import Input from "../../InputBox";
-import UploadImg from '../../../Utils/UploadIMG'
 export default function Profile() {
   const usrnameInput = useRef();
   const [readmood, setReadmood] = useState(true);
@@ -13,7 +13,7 @@ export default function Profile() {
   const { username, email, phone_number, address, avatar } = user || {};
   const [handleform, sethandleform] = useState({});
   const [errmsg, setErrorMsg] = useState([]);
-  const handleinput = (e) => {   
+  const handleinput = (e) => {
     sethandleform({
       ...handleform,
       [e.target.name]: e.target.value,
@@ -22,7 +22,6 @@ export default function Profile() {
       JSON.stringify({ username, phone_number, address }) !==
       JSON.stringify(handleform)
     ) {
-   
       setSubmitbutton(false);
     } else {
       setSubmitbutton(true);
@@ -54,17 +53,18 @@ export default function Profile() {
       newavatar
     ) {
       const formdata = new FormData(form.target);
-      if(newavatar){
+      if (newavatar) {
         const url = await UploadImg(newavatar);
-        formdata.set("avatar",url.data.data.display_url)    
-       }
-      axios.put(`${import.meta.env.VITE_API_URL}/user`, formdata, {
+        formdata.set("avatar", url.data.data.display_url);
+      }
+      axios
+        .put(`${import.meta.env.VITE_API_URL}/user`, formdata, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
           withCredentials: true,
         })
-        .then(async function  (response) {
+        .then(async function (response) {
           if (
             response.data.error &&
             Object.keys(response.data.error).length > 0
@@ -76,7 +76,6 @@ export default function Profile() {
             }
           } else {
             if (response.data) {
-            
               getCurrentuser();
               setReadmood(true);
               setErrorMsg([]);
@@ -138,7 +137,7 @@ export default function Profile() {
         <div className="lg:col-span-8 col-span-full mt-5 font-semibold infos">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="text-lg ">Name</span>
             </label>
             <input
               ref={usrnameInput}

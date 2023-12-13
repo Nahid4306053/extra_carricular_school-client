@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
@@ -20,10 +21,10 @@ export default function Card({
 
   return (
     <div
-      className={`card rounded-xl relative shadow-lg overflow-hidden cursor-pointer  bg-base-100 ${customcss}`}
+      className={`card rounded-md relative shadow-lg overflow-hidden cursor-pointer  bg-base-100 ${customcss}`}
     >
       <figure className="rounded-none coursefigure relative overflow-hidden h-72">
-        <img className={`w-full h-full `} src={thumbnail} alt={coursetitle} />
+        <img className={`w-full h-full object-cover`} src={thumbnail} alt={coursetitle} />
         <div className="overlay absolute bg-black top-0 h-full w-full"> </div>
       </figure>
       <div className="card-body gap-4">
@@ -45,12 +46,10 @@ export default function Card({
           to={`/single-course-view/${_id}`}
           className={`card-title block hover:text-sky-500 transition-all`}
         >
-          {coursetitle.length > 10
-            ? coursetitle
-            : `(${coursetitle})` + " " + slogan}
+          {coursetitle.slice(0,50)+"..."}
         </Link>
-        <p>{description.slice(0, 180) + " [...]"}</p>
-        <hr className="my-5 border-gray-300" />
+        <p className="leading-8">{description.slice(0, 100) + " [...]"}</p>
+        <hr className="my-3 border-gray-300" />
         <div className="flex justify-between">
           <p className="text-lg text-sky-500 ">${coursefee}</p>
           <div className="bookmark">

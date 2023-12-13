@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+
 import { useAuth } from '../Context/Authntication'
 import { Navigate, useLocation } from 'react-router-dom'
 import { ThreeCircles } from 'react-loader-spinner'

@@ -1,4 +1,4 @@
-import React from "react";
+
 import aboutImg from "/images/hp-about-right.png";
 export default function AboutLearningEinvrionment() {
   return (
@@ -8,11 +8,11 @@ export default function AboutLearningEinvrionment() {
           Learn how you want, where you want
         </p>
         <h1 className="text-4xl font-bold ">
-          The world’s largest selection of online courses
+          The world’s largest selection of online or offline courses
         </h1>
         <p className="leading-8 text-gray-500 text-lg">
-          Millions of people have used Nahider School to decide which online
-          course to take. We aggregate courses from many universities to help
+          Millions of people have used Nahider School to decide which online or offline
+          course  to take. We aggregate courses from many universities to help
           you find the best courses on almost any subject, wherever they exist.
           Our goal is to make online education work for everyone.
         </p>

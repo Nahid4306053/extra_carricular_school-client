@@ -52,7 +52,7 @@ export default function SingleCourseView() {
         const sanpshort = await axios.get(`${import.meta.env.VITE_API_URL}/course/enroll/${_id}`,{withCredentials:true});
         if(sanpshort.data.enroll){
            setIsenrolled(true);
-           console.log(sanpshort.data.enroll)
+          
         }  
         else{ 
          setIsenrolled(false);
@@ -65,7 +65,10 @@ export default function SingleCourseView() {
     const handelCourseWhichList = () =>{
       const oldata = getLocalStorageCourse()
       if(oldata.includes(_id)){ alert("allready added")}
-      else{ addCourseinLocalStorage(_id) }
+      else{ 
+        addCourseinLocalStorage(_id)
+        
+      }
     }
 
 

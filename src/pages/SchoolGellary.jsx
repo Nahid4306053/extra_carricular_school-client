@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Gellary from "../components/Gellary";
 import useLoadGallerys from '../Hooks/lodaGellarey';
 export default function SchoolGellary() {

@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
+import Lottie from "lottie-react";
 import  { createContext, useContext, useEffect, useState } from "react";
+import Authloader from '../assets/AuthLoading.json'
 const AuthProvidor = createContext();
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   return useContext(AuthProvidor);
@@ -45,8 +46,12 @@ export default function Authntication({ children }) {
   }, []);
 
   return (
-    <AuthProvidor.Provider value={{ loading, user, getCurrentuser }}>
+    <AuthProvidor.Provider value={{ loading,setUser, user, getCurrentuser }}>
       {!loading && children}
+      {loading && 
+        <div className="min-h-screen  w-full flex justify-center items-center">
+          <Lottie className="h-52" animationData={Authloader}></Lottie>
+        </div>}
     </AuthProvidor.Provider>
   );
 }

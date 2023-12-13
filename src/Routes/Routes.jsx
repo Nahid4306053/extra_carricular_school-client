@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-sparse-arrays */
+
 import { createBrowserRouter } from "react-router-dom";
 import Profile from "../components/Dashborder/pages/Profile";
 import MainLayouts from "../layouts/MainLayouts";
@@ -35,12 +36,10 @@ const CreateDRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("/Data/data.json"),
         element: <Home />,
       },
       {
         path: "/courses/:categorey",
-        loader: () => fetch("/Data/data.json"),
         element: <Courses />,
       },
       {
@@ -50,7 +49,6 @@ const CreateDRouter = createBrowserRouter([
       },
       {
         path: "/instructors",
-        loader: () => fetch("/Data/data.json"),
         element: <Instructors />,
       },
       {
@@ -117,26 +115,11 @@ const CreateDRouter = createBrowserRouter([
       },
       {
         path: "/single-course-view/:id",
-        loader: async () => {
-          const sanpshrcotourse = await fetch("/Data/courses.json");
-          const sanpshrotInstructors = await fetch("/Data/Instructors.json");
-          return {
-            course: await sanpshrcotourse.json(),
-            Instructors: await sanpshrotInstructors.json(),
-          };
-        },
+       
         element: <SingleCourseView />,
       },
       {
         path: "/single-instructor/:id",
-        loader: async () => {
-          const sanpshrcotourse = await fetch("/Data/courses.json");
-          const sanpshrotInstructors = await fetch("/Data/Instructors.json");
-          return {
-            course: await sanpshrcotourse.json(),
-            Instructors: await sanpshrotInstructors.json(),
-          };
-        },
         element: <SingleInstructor />,
       },
     ],

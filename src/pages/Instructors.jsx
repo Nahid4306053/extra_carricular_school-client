@@ -6,7 +6,7 @@ import fetchUserData from '../Hooks/fetchUserData'
 import { uniqBy } from "lodash";
 export default function Instructors() {
   const [instructors,setinstructors] = useState([])
-  const {fetchUsers,users} = fetchUserData();
+  const {fetchUsers,users,loading} = fetchUserData();
 
   useEffect(()=>{
     fetchUsers('instructor')
@@ -36,7 +36,12 @@ export default function Instructors() {
         </div>
       </div>
      <div className="my-20">
-     {instructors && <Teacher instructors={instructors}/>}
+     {!loading ? instructors && <Teacher instructors={instructors}/>
+     :
+     <div className="w-full  min-h-[300px] flex justify-center">
+          <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    }
      </div>
     </>
   );

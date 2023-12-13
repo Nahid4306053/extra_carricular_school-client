@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import useloadCoursedata from "../Hooks/loadCoursedata";
 import Card from "../components/Card";
@@ -10,7 +12,7 @@ export default function Courses() {
   // const courses = useloadCoursedata([]);
   const [page,setpage] = useState(1)
   const [displaydata,setDisplaydata] = useState([])
-  const {Courses,fetchcourses} = usefetchcourseData()
+  const {Courses,fetchcourses,loading} = usefetchcourseData()
   const {categorey} = useParams()
   useEffect(()=>{
     fetchcourses(page,6)
@@ -44,13 +46,15 @@ export default function Courses() {
       </div>
       <div >
   
-        {displaydata.length > 0 ? (    
+        {!loading ? displaydata.length > 0 ? (    
         <InfiniteScroll
         className="grid gap-10 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 my-20 container mx-auto"
           dataLength={displaydata.length}
           next={()=>setpage(page+1)}
           hasMore={Courses.totalData !== displaydata.length}
-          loader={<div className="col-span-12 text-center"><span className="loading text-sky-500 loading-spinner loading-lg"></span></div>}
+          loader={<div className="col-span-3 text-center"><span className="loading text-sky-500 loading-spinner loading-lg"></span></div>
+         
+        }
         >
          { displaydata.map((ele, ind) => {
             return (
@@ -65,7 +69,11 @@ export default function Courses() {
           <h1 className="text-4xl font-bold text-center  col-span-12">
             No Data found
           </h1>
-        )}
+        ):
+        <div className="w-full col-span-3 min-h-[300px] flex justify-center">
+          <span className="loading loading-spinner loading-lg"></span>
+         </div>
+        }
       </div>
     </>
   );

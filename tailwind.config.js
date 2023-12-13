@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,11 +7,25 @@ export default {
   ],
   theme: {
     screens: {
-      sm: '400px', 
-      md: '700px',
+      sm: '480px',
+      md: '768px',
       lg: '976px',
-      xl: '1400px', 
+      'xl': '1260px',
+      '2xl': '1460px'
+    }, 
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1rem',
+        md:'1rem',
+        lg: '1rem',
+        xl: '2rem',
+        '2xl': '3rem',
+      },
     },
+    fontFamily: {
+    }
+
   },
   plugins: [require("daisyui")],
 }

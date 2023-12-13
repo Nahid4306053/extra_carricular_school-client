@@ -47,7 +47,7 @@ export default function CourseTable() {
       if (updateIndex > -1) {
         newdata.splice(updateIndex, 1, Updatedata);
         setDisplayCourses(newdata);
-        console.log(displayCourses);
+      
       } else {
         const newdata = [...displayCourses];
         newdata.push(Updatedata);
